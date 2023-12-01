@@ -9,7 +9,85 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-white h-screen"></body>
+
+  <body class="h-screen bg-white">
+    <section class="max-lg:flex border p-5">
+      <div class="flex items-center justify-between">
+        <p
+          class="flex items-center max-sm:justify-center text-2xl text-black font-medium"
+        >
+          Tevada
+        </p>
+
+        <ul class="flex items-center justify-center space-x-5 max-lg:hidden">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="products.html">Product & Service</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact Us</a>
+          </li>
+          <span class="text-black"><i class="fa fa-user"></i></span>
+        </ul>
+      </div>
+
+      <div class="drawer z-50 lg:hidden flex justify-end">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <div class="w-full navbar">
+            <div class="flex-none lg:hidden">
+              <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block w-6 h-6 stroke-current"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="drawer-side">
+          <label for="my-drawer-3" class="drawer-overlay"></label>
+          <ul class="menu p-4 w-80 h-full bg-base-200">
+            <div class="flex items-center justify-between pb-5">
+              <p class="font-serif text-black font-medium cursor-default">
+                tevada
+              </p>
+              <label for="my-drawer-3" class="drawer-overlay">
+                <div
+                  class="border border-gray-300 cursor-pointer rounded-sm p-0.5"
+                ></div>
+              </label>
+            </div>
+            <li>
+              <p>Home</p>
+            </li>
+            <li>
+              <p>Products</p>
+            </li>
+            <li>
+              <p>ContactUs</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
