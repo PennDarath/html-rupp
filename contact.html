@@ -16,7 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="h-screen bg-white">
+  <body class="min-h-screen bg-white">
     <section class="max-lg:flex border p-5">
       <div class="flex items-center justify-between">
         <p
@@ -89,5 +89,108 @@
         </div>
       </div>
     </section>
-  </body>
+  </section>
+  <section class="border border-black/10 bg-stone-400/20 m-[30px] px-[40px] pt-[40px] pb-[20px] rounded-3xd">
+    <div class="container m-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-2 gap-[200px]">
+      <div>
+        <h2 class="mb-4 font-bold text-2xl md:text-4xl text-red-900">
+          Get in Touch With Us
+        </h2>
+        <p class="max-w-[803px] text-sm md:text-base mb-6 text-zinc-950">
+          Please feel free to contact us if you have any questions.
+        </p>
+        <form onsubmit="{yourSubmitFunction}" class="mb-6" novalidate="">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block mb-1 text-sm text-zinc-950">
+                Name
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="block p-2 mt-1 text-sm text-white w-full rounded-md"
+                />
+              </label>
+            </div>
+            <div>
+              <label class="block mb-1 text-sm text-zinc-950">
+                Email
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email "
+                  class="block p-2 mt-1 text-sm text-white w-full rounded-md"
+                />
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block mb-1 text-sm text-zinc-950">
+              Subject
+              <select required name="subject" class="p-2 mt-1 text-sm text-neutral-100 rounded-md w-full">
+                <option>Ask a Question</option>
+                <option>Request a Quote</option>
+                <option>Something else</option>
+              </select>
+            </label>
+          </div>
+          <label class="block mb-1 text-sm text-zinc-950">
+            Message
+            <textarea
+              required
+              name="message"
+              rows="3"
+              class="w-full p-2 mt-1 text-sm text-white rounded-md"
+            ></textarea>
+          </label>
+          <button
+            type="submit"
+            class="w-full mt-4 px-4 py-2 text-sm md:text-base rounded-md border border-transparent bg-black text-white hover:border hover:border-black hover:bg-white hover:text-black flex justify-center"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="mt-6">
+        <div class="contents">
+          <div class="left-side text-2xl">
+            <div class="address details">
+              <i class="fas fa-map-marker-alt text-3xl text-red-900"></i>
+              <div class="topic font-bold text-red-900 ">Address</div>
+              <div class="text-one text-zinc-950">Poipet, KH11</div>
+              <div class="text-two text-zinc-950">7makara 33</div>
+            </div>
+            <div class="phone details">
+              <i class="fas fa-phone-alt text-3xl text-red-900"></i>
+              <div class="topic font-bold text-red-900 ">Phone</div>
+              <div class="text-one text-zinc-950">0123456789</div>
+              <div class="text-two text-zinc-950">0123456789</div>
+            </div>
+            <div class="email details">
+              
+              <i class="fas fa-envelope text-3xl text-red-900 "></i>
+              <div class="topic font-bold  text-red-900">Email</div>
+              <div class="text-one text-zinc-950">coidiii@gmail.com</div>
+              <div class="text-two text-zinc-950">info.dkkoooo@gmail.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container m-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-1 gap-[30px]">
+      <div class="py-4 ">
+        <h3 class="title font-bold mb-4 text-2xl text-red-900">FIND US ON MAP</h3>
+        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d292.6304367381881!2d104.89866464206008!3d11.56438331891097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109510c8f54157b%3A0x687e6fdc9413c323!2s176b%20St%20150%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1617642120248!5m2!1sen!2skh" width="100%" height="400px" frameborder="0" style="border: 2px solid #808080" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  
+
+
+    </body>
 </html>
