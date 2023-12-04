@@ -1,93 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <body class="h-screen bg-white">
-    <section class="max-lg:flex border p-5">
-      <div class="flex items-center justify-between">
-        <p
-          class="flex items-center max-sm:justify-center text-2xl text-black font-medium"
-        >
-          Tevada
-        </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media (max-width: 1300px) {
+      #custom-grid-cols {
+        visibility: hidden;
+        display: none;
+      }
 
-        <ul class="flex items-center justify-center space-x-5 max-lg:hidden">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="products.html">Product & Service</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact Us</a>
-          </li>
-          <span class="text-black"><i class="fa fa-user"></i></span>
-        </ul>
+      #custom-column {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        justify-content: space-between;
+        align-items: center;
+        min-width: auto;
+      }
+
+      #custom-width {
+        grid-column: span 12 / span 12;
+      }
+
+
+    }
+
+    @media (max-width: 1200px) {
+      #custom-grid-cols {
+        visibility: hidden;
+        display: none;
+      }
+
+      #custom-column {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-content: space-between;
+        align-items: center;
+        min-width: auto;
+      }
+
+      #custom-width {
+        grid-column: span 12 / span 12;
+      }
+
+
+    }
+
+    @media (max-width: 910px) {
+      #custom-grid-cols {
+        visibility: hidden;
+        display: none;
+      }
+
+      #custom-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: space-between;
+        align-items: center;
+        min-width: auto;
+      }
+
+      #custom-width {
+        grid-column: span 12 / span 12;
+      }
+
+
+    }
+
+    @media (max-width: 610px) {
+      #custom-grid-cols {
+        visibility: hidden;
+        display: none;
+      }
+
+      #custom-column {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-content: space-between;
+        align-items: center;
+        min-width: auto;
+      }
+
+      #custom-width {
+        grid-column: span 12 / span 12;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-white w-screen scroll-smooth">
+  <section class="max-lg:flex border p-5 ">
+    <div class="flex items-center justify-between ">
+      <p class="flex items-center max-sm:justify-center text-2xl text-black font-medium">
+        Tevada
+      </p>
+
+      <ul class="flex items-center justify-center space-x-5 max-lg:hidden">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="products.html">Product & Service</a>
+        </li>
+        <li>
+          <a href="contact.html">Contact Us</a>
+        </li>
+        <span class="text-black"><i class="fa fa-user"></i></span>
+      </ul>
+    </div>
+
+    <div class="drawer z-50 lg:hidden flex justify-end">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <div class="w-full navbar">
+          <div class="flex-none lg:hidden">
+            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-6 h-6 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </label>
+          </div>
+        </div>
       </div>
 
-      <div class="drawer z-50 lg:hidden flex justify-end">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col">
-          <div class="w-full navbar">
-            <div class="flex-none lg:hidden">
-              <label for="my-drawer-3" class="btn btn-square btn-ghost">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  class="inline-block w-6 h-6 stroke-current"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </label>
+      <div class="drawer-side">
+        <label for="my-drawer-3" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 h-full bg-base-200">
+          <div class="flex items-center justify-between pb-5">
+            <p id="title" class="font-serif text-black font-medium cursor-default">
+              tevada
+            </p>
+            <label for="my-drawer-3" class="drawer-overlay">
+              <div class="border border-gray-300 cursor-pointer rounded-sm p-0.5"></div>
+            </label>
+          </div>
+          <li>
+            <p>Home</p>
+          </li>
+          <li>
+            <p>Products</p>
+          </li>
+          <li>
+            <p>ContactUs</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="grid grid-cols-12 pt-6  w-full">
+    <div id="custom-grid-cols" class="grid col-span-3 border-r-2 pr-5">
+      <div>
+        <ul class="menu w-full text-black ">
+          <li>
+            <details open>
+              <summary class="font-semibold border-b">Price</summary>
+              <div class="px-5 pt-5">
+                <div class="flex w-full justify-between text-gray-500 ">
+                  <h1>From</h1>
+                  <h1>To</h1>
+                </div>
+                <div class="flex w-full justify-between mt-3  ">
+                  <h1 class="border py-2 px-4 rounded-md">1200</h1>
+                  <h1 class="border py-2 px-4 rounded-md">1400</h1>
+                </div>
+              </div>
+            </details>
+            <details open class="mt-5">
+              <summary class="font-semibold border-b ">Brand</summary>
+              <ul>
+                <div class="relative mt-5">
+                  <input type="text" placeholder="Type here"
+                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
+                </div>
+                <div>
+                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox  border-gray-200" />
+                    <span class="label-text text-black">Apple</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Samsung</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Xiaomi</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Poco</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">OPPO</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Honor</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Motorola</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">ROG</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Realme</span>
+                  </label>
+                </div>
+
+              </ul>
+            </details>
+            <details open class="mt-5">
+              <summary class="font-semibold border-b ">Build-in memory</summary>
+              <ul>
+                <div class="relative mt-5">
+                  <input type="text" placeholder="Type here"
+                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
+                </div>
+                <div>
+                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox  border-gray-200" />
+                    <span class="label-text text-black">16GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">32GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">64GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">128GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">256GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">512GB</span>
+                  </label>
+                </div>
+
+
+              </ul>
+            </details>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div id="custom-width" class="grid col-span-9 w-full justify-around overflow-y-auto min-h-screen flex-1">
+      <div" id="custom-column" class="grid grid-cols-3  gap-5">
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
             </div>
           </div>
         </div>
-
-        <div class="drawer-side">
-          <label for="my-drawer-3" class="drawer-overlay"></label>
-          <ul class="menu p-4 w-80 h-full bg-base-200">
-            <div class="flex items-center justify-between pb-5">
-              <p class="font-serif text-black font-medium cursor-default">
-                tevada
-              </p>
-              <label for="my-drawer-3" class="drawer-overlay">
-                <div
-                  class="border border-gray-300 cursor-pointer rounded-sm p-0.5"
-                ></div>
-              </label>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
             </div>
-            <li>
-              <p>Home</p>
-            </li>
-            <li>
-              <p>Products</p>
-            </li>
-            <li>
-              <p>ContactUs</p>
-            </li>
-          </ul>
+          </div>
         </div>
-      </div>
-    </section>
-  </body>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+</body>
+
 </html>
