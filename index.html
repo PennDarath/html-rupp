@@ -19,7 +19,6 @@
       document.addEventListener("DOMContentLoaded", function () {
         const pathName = window.location.pathname;
         const pageName = pathName.split("/").pop();
-
         if (pageName === "index.html") {
           const homeLink = document.getElementById("home");
           if (homeLink) {
@@ -33,10 +32,8 @@
 
   <body class="min-h-screen bg-white min-w-screen">
     <my-navbar></my-navbar>
-    <section>
-      <div
-        class="bg-[#1c2e4a] w-screen h-[500px] flex justify-around items-center"
-      >
+    <section class="bg-[#1c2e4a]">
+      <div class="w-screen h-[500px] flex justify-around items-center">
         <div class="justify-center items-center text-white ml-28">
           <p class="text-xl">Pro.Beyond</p>
           <h3 class="text-6xl pb-3">IPhone 15 <b>Pro Max</b></h3>
@@ -151,7 +148,7 @@
         <a href="#" class="text-black pr-3 pb-5 font-bold">Best Seller</a>
         <a href="#" class="text-black pr-3 pb-5 font-bold">Featured Products</a>
       </div>
-      <div class="flex space-x-5 justify-between pb-5">
+      <div class="flex flex-wrap space-x-5 justify-between pb-5">
         <div class="card w-72 bg-gray-100 shadow-sm">
           <figure class="px-10 pt-10">
             <img
@@ -216,8 +213,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex space-x-5 justify-between">
         <div class="card w-72 bg-gray-100 shadow-sm">
           <figure class="px-10 pt-10">
             <img
