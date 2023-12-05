@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="css/product.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+      @media (max-width: 1600px) {
+
+      #custom-column {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-content: space-between;
+        align-items: center;
+        min-width: auto;
+      }
+
+
+    }
     @media (max-width: 1300px) {
       #custom-grid-cols {
         visibility: hidden;
@@ -154,7 +165,7 @@
     </div>
   </section>
   <section class="grid grid-cols-12 pt-6  w-full">
-    <div id="custom-grid-cols" class="grid col-span-3 border-r-2 pr-5">
+    <div id="custom-grid-cols" class="grid col-span-3 border-r-2 pr-5 pb-5">
       <div>
         <ul class="menu w-full text-black ">
           <li>
@@ -294,8 +305,8 @@
       </div>
     </div>
     </div>
-    <div id="custom-width" class="grid col-span-9 w-full justify-around overflow-y-auto min-h-screen flex-1">
-      <div" id="custom-column" class="grid grid-cols-3  gap-5">
+    <div id="custom-width" class="grid col-span-9 w-full pb-5 justify-around overflow-y-auto min-h-screen flex-1">
+      <div" id="custom-column" class="grid grid-cols-4 gap-5 mx-5">
         <div class="card w-72 bg-gray-100 shadow-sm">
           <figure class="px-10 pt-10">
             <img
@@ -425,6 +436,311 @@
     </div>
     </div>
   </section>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const pathName = window.location.pathname;
+        const pageName = pathName.split("/").pop();
+
+        if (pageName === "products.html") {
+          const homeLink = document.getElementById("products");
+          if (homeLink) {
+            homeLink.classList.add("font-bold", "text-black");
+          }
+        }
+      });
+    </script>
+    <script src="./componets.js"></script>
+</head>
+
+<body class="min-h-screen bg-white w-screen scroll-smooth">
+ <my-navbar></my-navbar>
+  <section class="grid grid-cols-12 pt-6 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full">
+    <div id="custom-grid-cols" class="grid col-span-3  border-r-2 pr-5 pb-5">
+      <div>
+        <ul class="menu w-full text-black ">
+          <li>
+            <details open>
+              <summary class="font-semibold border-b">Price</summary>
+              <div class="px-5 pt-5">
+                <div class="flex w-full justify-between text-gray-500 ">
+                  <h1>From</h1>
+                  <h1>To</h1>
+                </div>
+                <div class="flex w-full justify-between mt-3  ">
+                  <h1 class="border py-2 px-4 rounded-md">1200</h1>
+                  <h1 class="border py-2 px-4 rounded-md">1400</h1>
+                </div>
+              </div>
+            </details>
+            <details open class="mt-5">
+              <summary class="font-semibold border-b ">Brand</summary>
+              <ul>
+                <div class="relative mt-5">
+                  <input type="text" placeholder="Type here"
+                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
+                </div>
+                <div>
+                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox  border-gray-200" />
+                    <span class="label-text text-black">Apple</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Samsung</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Xiaomi</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Poco</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">OPPO</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Honor</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Motorola</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">ROG</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">Realme</span>
+                  </label>
+                </div>
+
+              </ul>
+            </details>
+            <details open class="mt-5">
+              <summary class="font-semibold border-b ">Build-in memory</summary>
+              <ul>
+                <div class="relative mt-5">
+                  <input type="text" placeholder="Type here"
+                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
+                </div>
+                <div>
+                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox  border-gray-200" />
+                    <span class="label-text text-black">16GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">32GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">64GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">128GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">256GB</span>
+                  </label>
+                </div>
+                <div class="form-control pt-2">
+                  <label class="label cursor-pointer flex justify-start gap-x-3">
+                    <input type="checkbox" class="checkbox border-gray-200" />
+                    <span class="label-text text-black">512GB</span>
+                  </label>
+                </div>
+
+
+              </ul>
+            </details>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div id="custom-width" class="grid col-span-9 w-full pb-5 justify-around overflow-y-auto min-h-screen flex-1">
+      <div" id="custom-column" class="grid grid-cols-3 gap-5 sm:px-0 md:px-0 lg:px-5">
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card w-72 bg-gray-100 shadow-sm">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
+              alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body w-full items-center text-center text-black">
+            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
+            <h2 class="card-title">$1599</h2>
+            <div class="card-actions w-full justify-center">
+              <button class="btn w-[90%] border">Buy Now</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+   <my-footer> </my-footer>
 </body>
 
 </html>
