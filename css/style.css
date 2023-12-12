@@ -1,10 +1,9 @@
-
-#icon-user {
+#icon-fill {
   color: white;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
-#icon-cart {
+/* #icon-cart {
   color: white;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
@@ -13,10 +12,4 @@
   color: white;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
-}
-.active {
-  background-color: red;
-  color: red;
-}
-
-
+} */
