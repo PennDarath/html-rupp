@@ -13,7 +13,7 @@ class NavBar extends HTMLElement {
             height="50px"
             class="border-none pb-3"
           />
-          <p class="text-2xl text-black font-medium">Cyber Store</p>
+          <p class="text-2xl text-black font-medium">Uyseng Store</p>
         </div>
         <div class="flex-1 max-sm:hidden relative">
           <input
@@ -47,14 +47,14 @@ class NavBar extends HTMLElement {
             <li>
               <a href="#"
                 ><span class="text-black fill"
-                  ><i id="icon-heart" class="fa fa-heart"></i></span
+                  ><i id="icon-fill" class="fa fa-heart"></i></span
               ></a>
             </li>
             <li>
               <a href="#"
                 ><span class="text-black"
                   ><i
-                    id="icon-cart"
+                    id="icon-fill"
                     class="fa fa-shopping-cart"
                     aria-hidden="true"
                   ></i></span
@@ -64,7 +64,7 @@ class NavBar extends HTMLElement {
               <a href="#"
                 ><span class="text-black"
                   ><i
-                    id="icon-user"
+                    id="icon-fill"
                     class="fa fa-user"
                     aria-hidden="true"
                   ></i></span
