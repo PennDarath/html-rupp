@@ -69,3 +69,41 @@
     grid-column: span 12 / span 12;
   }
 }
+
+.scroll-bar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 6px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.input_rage {
+  border-radius: 8px;
+  height: 4px;
+  outline: none;
+  background-color: #000;
+  color: #000;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 12px;
+  -webkit-appearance: none;
+  height: 12px;
+  background: black;
+  border-radius: 10px;
+}
+
+#dropdown-color:active {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 4s, color 4s;
+
+}

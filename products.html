@@ -449,164 +449,162 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-      <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const pathName = window.location.pathname;
-        const pageName = pathName.split("/").pop();
 
-        if (pageName === "products.html") {
-          const homeLink = document.getElementById("products");
-          if (homeLink) {
-            homeLink.classList.add("font-bold", "text-black");
-          }
-        }
-      });
-    </script>
-    <script src="./componets.js"></script>
+  <script src="./componets.js"></script>
+
+
 </head>
 
 <body class="min-h-screen bg-white w-screen scroll-smooth">
- <my-navbar></my-navbar>
+  <my-navbar></my-navbar>
   <section class="grid grid-cols-12 pt-6 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full">
-    <div id="custom-grid-cols" class="grid col-span-3  border-r-2 pr-5 pb-5">
-      <div>
-        <ul class="menu w-full text-black ">
-          <li>
-            <details open>
-              <summary class="font-semibold border-b">Price</summary>
-              <div class="px-5 pt-5">
-                <div class="flex w-full justify-between text-gray-500 ">
-                  <h1>From</h1>
-                  <h1>To</h1>
-                </div>
-                <div class="flex w-full justify-between mt-3  ">
-                  <h1 class="border py-2 px-4 rounded-md">1200</h1>
-                  <h1 class="border py-2 px-4 rounded-md">1400</h1>
-                </div>
+    <div id="custom-grid-cols" class="grid col-span-3 pr-5 pb-5">
+
+      <ul class="menu w-full text-black ">
+        <li>
+          <details open>
+            <summary id="dropdown-color" class=" font-semibold border-b px-0 rounded-none pr-1.5 hover:bg-white ">Price</summary>
+            <div class="pt-5">
+              <div class="flex w-full justify-between text-gray-500 ">
+                <h1>From</h1>
+                <h1>To</h1>
               </div>
-            </details>
-            <details open class="mt-5">
-              <summary class="font-semibold border-b ">Brand</summary>
-              <ul>
-                <div class="relative mt-5">
-                  <input type="text" placeholder="Type here"
-                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
-                </div>
-                <div>
-                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox  border-gray-200" />
-                    <span class="label-text text-black">Apple</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Samsung</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Xiaomi</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Poco</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">OPPO</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Honor</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Motorola</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">ROG</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">Realme</span>
-                  </label>
-                </div>
+              <div class="flex w-full justify-between mt-3 mb-2 ">
+                <h1 class="border py-2 px-4 rounded-md w-16">0$</h1>
+                <h1 id="result" class="border py-2 px-4 rounded-md w-16">0$</h1>
+              </div>
+              <input id="myinput" type="range" min="0" class="w-full input_rage " value="0" max="1400" />
+            </div>
+          </details>
+          <details open class="mt-5 ">
+            <summary id="dropdown-color" class="font-semibold mb-5 border-b px-0 rounded-none pr-1.5 hover:bg-white ">Brand</summary>
+            <ul class=" h-[400px] px-0 mx-0">
+              <div class="border-r relative overflow-auto h-full scroll-bar ">
+              <div class=" mr-5">
+                <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full" />
+              </div>
+              <div>
+                <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox  border-gray-200" />
+                  <span class="label-text text-black">Apple</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Samsung</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Xiaomi</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Poco</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">OPPO</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Honor</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Motorola</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">ROG</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Realme</span>
+                </label>
+              </div>
+              </div>
 
-              </ul>
-            </details>
-            <details open class="mt-5">
-              <summary class="font-semibold border-b ">Build-in memory</summary>
-              <ul>
-                <div class="relative mt-5">
-                  <input type="text" placeholder="Type here"
-                    class="input pl-9 input-bordered bg-white w-full max-w-xs" />
-                </div>
-                <div>
-                  <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox  border-gray-200" />
-                    <span class="label-text text-black">16GB</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">32GB</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">64GB</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">128GB</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">256GB</span>
-                  </label>
-                </div>
-                <div class="form-control pt-2">
-                  <label class="label cursor-pointer flex justify-start gap-x-3">
-                    <input type="checkbox" class="checkbox border-gray-200" />
-                    <span class="label-text text-black">512GB</span>
-                  </label>
-                </div>
+            </ul>
+          </details>
+          <details open class="mt-5">
+            <summary id="dropdown-color" class="font-semibold border-b mb-5 px-0 rounded-none pr-1.5 hover:bg-white ">Build-in memory</summary>
+              <ul class=" h-[300px] px-0 mx-0">
+              <div class="border-r relative overflow-auto h-full scroll-bar ">
+              <div class=" mr-5">
+                <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full max-w-xs" />
+              </div>
+              <div>
+                <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox  border-gray-200" />
+                  <span class="label-text text-black">16GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">32GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">64GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">128GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">256GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">512GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">1TB</span>
+                </label>
+              </div>
+              </div>
 
 
-              </ul>
-            </details>
-          </li>
-
-        </ul>
-      </div>
+            </ul>
+          </details>
+        </li>
+      </ul>
     </div>
     </div>
     <div id="custom-width" class="grid col-span-9 w-full pb-5 justify-around overflow-y-auto min-h-screen flex-1">
@@ -740,7 +738,8 @@
     </div>
     </div>
   </section>
-   <my-footer> </my-footer>
+  <my-footer> </my-footer>
+  <script src="./js/products.js"></script>
 </body>
 
 </html>
