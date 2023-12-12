@@ -6,6 +6,169 @@
     <title>Details</title>
     <link rel="stylesheet" href="css/product-detail.css" />
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'roboto', sans-serif;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .main-wrapper {
+        min-height: 100vh;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .product-div {
+        margin: 1rem 0;
+        padding: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: aliceblue;
+        border-radius: 3px;
+        column-gap: 10px;
+    }
+
+    .product-div-left {
+        padding: 20px;
+    }
+
+    .product-div-right {
+        padding: 20px;
+    }
+
+    .img-container img {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .hover-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    .hover-container div {
+        border: 2px crimson;
+        padding: 1rem;
+        border-radius: 3px;
+        margin: 0 4px 8px 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .active {
+        border-color: crimson;
+    }
+
+    .hover-container div:hover {
+        border-color: crimson;
+    }
+
+    .hover-container div img {
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .product-div-right span {
+        display: block;
+    }
+
+    .product-name {
+        font-size: 26px;
+        margin-bottom: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    .product-price {
+        font-weight: 700;
+        font-size: 24px;
+        opacity: 0.9;
+        font-weight: 900;
+    }
+
+    .product-rating {
+        margin-right: 5px;
+    }
+
+    .product-description {
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 300;
+        opacity: 0.9;
+        margin-top: 20px;
+    }
+
+    .btn-groups {
+        margin-top: 22px;
+    }
+
+    .btn-groups button {
+        display: inline-block;
+        font-size: 16px;
+        font-family: inherit;
+        text-transform: uppercase;
+        padding: 15px 16px;
+        color: aliceblue;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-groups button .fas {
+        margin-right: 8px;
+    }
+
+    .add-cart-btn {
+        background-color: crimson;
+        border: 2px salmon;
+        margin-right: 8px;
+    }
+
+    .add-cart-btn:hover {
+        background-color: aliceblue;
+        color: rgb(20, 40, 220);
+    }
+
+    .buy-now-btn {
+        background-color: blanchedalmond;
+        border: 2px salmon;
+    }
+
+    .buy-now-btn:hover {
+        background-color: aliceblue;
+        color: black;
+    }
+
+    @media screen and (max-width: 400px) {
+        .btn-groups button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+
+
 <body>
     <div class="main wrapper">
         <div class="container">
@@ -29,20 +192,32 @@
                         </div>
                     </div>
                     <div class="product-div-right"
-                        <span class="product-name">(New)
-                            Analog Watch = For men </span>
-                        <span class="product-price"># 50.25
-
-                        </span>
+                        <span class="product-name">(New) Analog Watch - For Men</span>
+                        <span class="product-price">#50.25</span>
                         <div class="product-rating">
                             <span><i class="fas fa-star"></i></span>
                             <span><i class="fas fa-star"></i></span>
                             <span><i class="fas fa-star"></i></span>
                             <span><i class="fas fa-star"></i></span>
                             <span><i class="fas fa-star-half-alt"></i></span>
-
+                            <span>(250 ratings)</span>
                         </div>
+                    </div>
                     
+                             <p class="product-description">Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without
+                                rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing
+                                the new systemwith two cameras 
+                             </p>   
+                         <div class="btn-groups">
+                            <button type="button" class="add-cart-btn">
+                                <i class="fas fa-shopping-cart"></i> add to cart
+                            </button>
+                            <button type="button" class="buy-now-btn">
+                                <i class="fas fa-wallet"></i>buy now
+                            </button>
+                         </div>    
+                             
+    
 
                 </div>
             </div>
