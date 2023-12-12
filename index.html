@@ -31,32 +31,25 @@
     </script>
     <script src="./componets.js"></script>
   </head>
-
+  <my-navbar></my-navbar>
   <body class="min-h-screen bg-white min-w-screen">
-    <my-navbar></my-navbar>
     <section class="bg-[#1c2e4a]">
-      <div class="w-screen h-[500px] flex justify-around items-center">
+      <div class="w-screen h-[500px] flex justify-around items-center ">
         <div class="justify-center items-center text-white ml-28">
           <p class="text-xl">Pro.Beyond</p>
           <h3 class="text-6xl pb-3">IPhone 15 <b>Pro Max</b></h3>
           <p class="text-base pb-4">
             Created to change everything for the better. For everyone
           </p>
-          <a href="products.html"
-            ><button
-              class="btn text-white border-white bg-[#1c2e4a] hover:bg-[#1c2e4a] hover:border-white w-32"
-            >
-              Shop now
-            </button></a
-          >
+          <a href="products.html"><button
+              class="btn text-white border-white bg-[#1c2e4a] hover:bg-[#1c2e4a] hover:border-white w-32">Shop now</button></a>
         </div>
         <div class="h-full">
           <img
             class="h-full"
             src="https://static.wixstatic.com/media/5f8be9_16730c70bf8640aab3f3ad5c08281e8c~mv2.png/v1/fill/w_628,h_388,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5f8be9_16730c70bf8640aab3f3ad5c08281e8c~mv2.png"
             height="100%"
-            alt=""
-          />
+            alt=""/>
         </div>
       </div>
     </section>
@@ -82,7 +75,7 @@
       </div>     
     </section> -->
 
-    <section class="bg-white px-44 py-5">
+    <section class="bg-white 2xl:px-32 xl:px-28 lg:px-20 md:px-12 md:justify-center sm:px-5 px-5 py-5">
       <div class="flex items-center justify-between pb-4">
         <div>
           <p class="text-xl text-black font-bold">Browse By Category</p>
@@ -95,9 +88,10 @@
           <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
         </div>
       </div>
-      <div class="flex justify-between">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:justify-center max-sm:justify-center gap-5 max-sm:ml-[38px]">
+        <!-- Repeat this block for 6 cards -->
         <div
-          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid"
+          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
         >
           <i
             class="justify-center items-end grid fa fa-mobile text-4xl"
@@ -105,59 +99,68 @@
           ></i>
           <p class=" ">Phones</p>
         </div>
+        <!-- End of repeated block -->
         <div
-          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid"
+          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
         >
           <i
-            class="justify-center items-end grid fa fa-mobile text-4xl"
+            class="justify-center items-end grid fa fa-tablet text-4xl"
             aria-hidden="true"
           ></i>
           <p class=" ">Phones</p>
         </div>
         <div
-          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid"
+          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
         >
           <i
-            class="justify-center items-end grid fa fa-mobile text-4xl"
+            class="justify-center items-end grid fa fa-camera text-4xl"
             aria-hidden="true"
           ></i>
-          <p class=" ">Phones</p>
+          <p class=" ">Camera</p>
         </div>
         <div
-          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid"
+          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
         >
           <i
-            class="justify-center items-end grid fa fa-mobile text-4xl"
+            class="justify-center items-end grid fa fa-camera text-4xl"
             aria-hidden="true"
           ></i>
-          <p class=" ">Phones</p>
+          <p class=" ">Camera</p>
         </div>
         <div
-          class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid"
-        >
-          <i
-            class="justify-center items-end grid fa fa-mobile text-4xl"
-            aria-hidden="true"
-          ></i>
-          <p class=" ">Phones</p>
-        </div>
+        class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
+      >
+        <i
+          class="justify-center items-end grid fa fa-camera text-4xl"
+          aria-hidden="true"
+        ></i>
+        <p class=" ">Camera</p>
+      </div>
+      <div
+      class="text-black bg-gray-100 w-[160px] h-[128px] rounded-md justify-center grid mb-3"
+    >
+      <i
+        class="justify-center items-end grid fa fa-camera text-4xl"
+        aria-hidden="true"
+      ></i>
+      <p class=" ">Camera</p>
+    </div>
       </div>
     </section>
 
-    <section class="px-44 py-5 bg-white pb-5">
-      <div class="justify-center pr-2 pb-5">
+    <section class="max-sm:justify-center md:justify-center xl:justify-start    ">
+      <div class="2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5  ">
         <a href="#" class="text-black pr-3 pb-5 font-bold">New Arrival</a>
         <a href="#" class="text-black pr-3 pb-5 font-bold">Best Seller</a>
         <a href="#" class="text-black pr-3 pb-5 font-bold">Featured Products</a>
       </div>
-      <div class="flex flex-wrap space-x-5 justify-between pb-5">
-        <div class="card w-72 bg-gray-100 shadow-sm">
+      <div class="flex max-sm:justify-center md:justify-center xl:justify-center gap-5 flex-wrap ">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -167,13 +170,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="https://www.ormsdirect.co.za/cdn/shop/products/blackmagic-design-pocket-cinema-camera-6k-pro-front.webp?v=1678712417"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Blackmagic Pocket Cinema Camera 6K</p>
@@ -183,13 +185,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -199,13 +200,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -215,13 +215,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -231,13 +230,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="https://www.ormsdirect.co.za/cdn/shop/products/blackmagic-design-pocket-cinema-camera-6k-pro-front.webp?v=1678712417"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -247,13 +245,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
@@ -263,13 +260,12 @@
             </div>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 bg-gray-100 shadow-sm mb-5">
           <figure class="px-10 pt-10">
             <img
               src="./img/iPhone15_Pro_Titanium.png"
               alt="Shoes"
-              class="rounded-xl"
-            />
+              class="rounded-xl"/>
           </figure>
           <div class="card-body w-full items-center text-center text-black">
             <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
