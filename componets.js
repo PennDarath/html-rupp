@@ -14,7 +14,7 @@ class NavBar extends HTMLElement {
             id="logo"
             class="border-none pb-3 rounded-full"
           />
-          <p class="text-2xl text-black font-medium">Uyseng Store</p>
+          <p class="text-2xl text-black font-medium">Pherk Store</p>
         </div>
         <div class="flex-1 max-sm:hidden relative">
           <input

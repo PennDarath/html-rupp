@@ -1,3 +1,5 @@
+
+
 @media (max-width: 1410px) {
   #custom-grid-cols {
     visibility: hidden;
@@ -105,5 +107,12 @@ input[type="range"]::-webkit-slider-thumb {
   color: #000;
   cursor: pointer;
   transition: background-color 4s, color 4s;
+
+}
+
+#icon-fill-product {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: gray;
 
 }
