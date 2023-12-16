@@ -16,21 +16,20 @@
 
 </head>
 
-<body class="min-h-screen bg-white w-screen scroll-smooth">
+<body class=" bg-white w-screen h-[150vh] scroll-smooth ">
   <my-navbar></my-navbar>
-  <section class="grid grid-cols-12 pt-6 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full">
-    <div id="custom-grid-cols" class="grid col-span-3 pr-5 pb-5">
-
-      <ul class="menu w-full text-black ">
+  <main class=" main grid grid-cols-12  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full h-[150vh] bg-white">
+  <div id="custom-grid-cols" class="grid list flex-1 overflow-auto  col-span-3 pr-5 pb-5 grid items-start justify-start">
+      <ul class="menu w-[305px] text-black ">
         <li>
           <details open>
-            <summary id="dropdown-color" class=" font-semibold border-b px-0 rounded-none pr-1.5 hover:bg-white ">Price</summary>
+            <summary id="dropdown-color" class=" font-semibold border-b px-0 min-w-screen  rounded-none pr-1.5 hover:bg-white ">Price</summary>
             <div class="pt-5">
               <div class="flex w-full justify-between text-gray-500 ">
                 <h1>From</h1>
                 <h1>To</h1>
               </div>
-              <div class="flex w-full justify-between mt-3 mb-2 ">
+              <div class="flex min-w-full justify-between mt-3 mb-2 ">
                 <h1 class="border py-2 px-4 rounded-md w-16">0$</h1>
                 <h1 id="result" class="border py-2 px-4 rounded-md w-16">0$</h1>
               </div>
@@ -38,9 +37,9 @@
             </div>
           </details>
           <details open class="mt-5 ">
-            <summary id="dropdown-color" class="font-semibold mb-5 border-b px-0 rounded-none pr-1.5 hover:bg-white ">Brand</summary>
+            <summary id="dropdown-color" class="font-semibold  border-b px-0 rounded-none pr-1.5 hover:bg-white ">Brand</summary>
             <ul class=" h-[400px] px-0 mx-0">
-              <div class="border-r relative overflow-auto h-full scroll-bar ">
+              <div class="border-r mt-5 relative overflow-auto h-full scroll-bar ">
               <div class=" mr-5">
                 <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full" />
               </div>
@@ -106,9 +105,9 @@
             </ul>
           </details>
           <details open class="mt-5">
-            <summary id="dropdown-color" class="font-semibold border-b mb-5 px-0 rounded-none pr-1.5 hover:bg-white ">Build-in memory</summary>
+            <summary id="dropdown-color" class="font-semibold border-b  px-0 rounded-none pr-1.5 hover:bg-white ">Build-in memory</summary>
               <ul class=" h-[300px] px-0 mx-0">
-              <div class="border-r relative overflow-auto h-full scroll-bar ">
+              <div class="border-r relative overflow-auto h-full scroll-bar mt-5">
               <div class=" mr-5">
                 <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full max-w-xs" />
               </div>
@@ -162,141 +161,369 @@
 
             </ul>
           </details>
+          <details open class="mt-5">
+            <summary id="dropdown-color" class="font-semibold border-b px-0 rounded-none pr-1.5 hover:bg-white ">Installed RAM Size</summary>
+              <ul class=" h-[300px] px-0 mx-0">
+              <div class="border-r relative overflow-auto h-full scroll-bar mt-5">
+              <div class=" mr-5">
+                <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full max-w-xs" />
+              </div>
+              <div>
+                <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox  border-gray-200" />
+                  <span class="label-text text-black">Up to 1.9 GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">2 to 3.9 GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">4 to 5.9 GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">6 to 7.9 GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">8 to 9.9 GB</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">10 GB & above</span>
+                </label>
+              </div>
+              </div>
+
+
+            </ul>
+          </details>
+          <details open class="mt-5">
+            <summary id="dropdown-color" class="font-semibold border-b mb-5 px-0 rounded-none pr-1.5 hover:bg-white ">Included Components</summary>
+              <ul class=" h-[300px] px-0 mx-0">
+              <div class="border-r relative overflow-auto h-full scroll-bar ">
+              <div class=" mr-5">
+                <input type="text" placeholder="Type here" class="input pl-11 input-bordered bg-white w-full max-w-xs" />
+              </div>
+              <div>
+                <span class="text-gray-400 absolute top-3 left-5 text-base"><i class="fa fa-search"></i></span>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox  border-gray-200" />
+                  <span class="label-text text-black">Phone Case</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Power Adapter</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Sim Tray Ejector</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">USB Cable</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Headset</span>
+                </label>
+              </div>
+              <div class="form-control pt-2">
+                <label class="label cursor-pointer flex justify-start gap-x-3">
+                  <input type="checkbox" class="checkbox border-gray-200" />
+                  <span class="label-text text-black">Screen Protector</span>
+                </label>
+              </div>
+              </div>
+
+
+            </ul>
+          </details>
         </li>
       </ul>
     </div>
-    </div>
-    <div id="custom-width" class="grid col-span-9 w-full pb-5 justify-around overflow-y-auto min-h-screen flex-1">
+
+
+   <div id="custom-width" class="grid list flex-1 overflow-auto items-start justify-center gap-x-5 col-span-9 w-full pb-5 ju overflow-y-auto min-h-screen flex-1">
       <div" id="custom-column" class="grid grid-cols-3 gap-5 sm:px-0 md:px-0 lg:px-5">
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61b7Ew7kjYL._AC_UF894,1000_QL80_.jpg"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 12 Pro Max 128GB WHite (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
               src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+          </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61b7Ew7kjYL._AC_UF894,1000_QL80_.jpg"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 12 Pro Max 128GB WHite (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
               src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10">
+            <img
+              src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61b7Ew7kjYL._AC_UF894,1000_QL80_.jpg"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 12 Pro Max 128GB WHite (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
               src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
+        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09syBmW1W9e7tI3P40Ju9Jw87MML1LZho2ANcVu-1bRe4TMUqgTO50E6Yycy2F7PvKAc&usqp=CAU"
+              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
           </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
+            <p class="card-title">$1400</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
-        </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
-            </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
           </div>
         </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div class="card w-72 bg-gray-100 shadow-sm">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/refurb-iphone-13-pro-max-graphite-2023?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1679072989055"
-              alt="Shoes" class="rounded-xl" />
-          </figure>
-          <div class="card-body w-full items-center text-center text-black">
-            <p>Apple iPhone 15 Pro Max Sliver 1TB</p>
-            <h2 class="card-title">$1599</h2>
-            <div class="card-actions w-full justify-center">
-              <button class="btn w-[90%] border">Buy Now</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    </div>
-  </section>
+</main>
+
   <my-footer> </my-footer>
   <script src="./js/products.js"></script>
 </body>

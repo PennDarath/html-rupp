@@ -2,6 +2,7 @@
   color: white;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
+
 }
 /* #icon-cart {
   color: white;
@@ -22,6 +23,14 @@
   }
 }
 #logo {
-  animation: rotateAnimation 3s linear infinite;
+  animation: rotateAnimation 20s linear infinite;
 }
 
+#text-card {
+
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
