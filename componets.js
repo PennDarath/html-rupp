@@ -11,7 +11,8 @@ class NavBar extends HTMLElement {
             alt="Logo"
             width="50px"
             height="50px"
-            class="border-none pb-3"
+            id="logo"
+            class="border-none pb-3 rounded-full"
           />
           <p class="text-2xl text-black font-medium">Uyseng Store</p>
         </div>
@@ -114,13 +115,13 @@ class NavBar extends HTMLElement {
                 </label>
               </div>
               <li>
-                <a href="index.html" class="text-black">Home</a>
+                <a href="index.html" class="text-black font-semibold hover:bg-black hover:text-white">Home</a>
               </li>
               <li>
-                <a href="products.html" class="text-black">Products</a>
+                <a href="products.html" class="text-black font-semibold hover:bg-black hover:text-white">Products</a>
               </li>
               <li>
-                <a href="contact.html" class="text-black">Contact Us</a>
+                <a href="contact.html" class="text-black font-semibold hover:bg-black hover:text-white">Contact Us</a>
               </li>
             </ul>
           </div>
