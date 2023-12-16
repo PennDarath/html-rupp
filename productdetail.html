@@ -4,228 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
-    <link rel="stylesheet" href="css/product-detail.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+
 </head>
 <style>
-    * {
+    *{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        border-radius: 15px;
     }
+
     body {
-        font-family: 'roboto', sans-serif;
+        font-family: sans-serif;
+        background: #C4D4E0;
+    }
+    .container{
+        max-width: 75%;
+        margin: auto;
+        height: 80vh;
+        margin-top: 5%;
+        background: white;
+        box-shadow: 5px 5px 10px 3px rgba(red, green, blue, alpha);
+    }
+    .left,.right{
+        width: 50%;
+        padding: 30px;
+
     }
 
-    img {
-        width: 100%;
-        display: block;
-    }
-
-    .main-wrapper {
-        min-height: 100vh;
-        background-color: aliceblue;
+    .flex {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 16px;
-    }
-
-    .product-div {
-        margin: 1rem 0;
-        padding: 2rem 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        background-color: aliceblue;
-        border-radius: 3px;
-        column-gap: 10px;
-    }
-
-    .product-div-left {
-        padding: 20px;
-    }
-
-    .product-div-right {
-        padding: 20px;
-    }
-
-    .img-container img {
-        width: 200px;
-        margin: 0 auto;
-    }
-
-    .hover-container {
+    .flex1 {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 32px;
+
     }
 
-    .hover-container div {
-        border: 2px crimson;
-        padding: 1rem;
-        border-radius: 3px;
-        margin: 0 4px 8px 4px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .main_image {
+        width: auto;
+        height: auto;
     }
 
-    .active {
-        border-color: crimson;
+    .option img {
+        width: 75px;
+        height: 75px;
+        padding: 10px;
     }
 
-    .hover-container div:hover {
-        border-color: crimson;
+    .right {
+        padding: 50px 100px 50px 50px;
     }
-
-    .hover-container div img {
-        width: 50px;
-        cursor: pointer;
+    
+    h3 {
+        color: rgba(163, 62, 3, 0.781);
+        margin: 20px 0 20px 0;
+        font-size: 25px;
     }
-
-    .product-div-right span {
-        display: block;
-    }
-
-    .product-name {
-        font-size: 26px;
-        margin-bottom: 22px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        opacity: 0.9;
-    }
-
-    .product-price {
-        font-weight: 700;
-        font-size: 24px;
-        opacity: 0.9;
-        font-weight: 900;
-    }
-
-    .product-rating {
-        margin-right: 5px;
-    }
-
-    .product-description {
-        font-size: 15px;
-        line-height: 1.6;
-        font-weight: 300;
-        opacity: 0.9;
-        margin-top: 20px;
-    }
-
-    .btn-groups {
-        margin-top: 22px;
-    }
-
-    .btn-groups button {
-        display: inline-block;
-        font-size: 16px;
-        font-family: inherit;
-        text-transform: uppercase;
-        padding: 15px 16px;
-        color: aliceblue;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .btn-groups button .fas {
-        margin-right: 8px;
-    }
-
-    .add-cart-btn {
-        background-color: crimson;
-        border: 2px salmon;
-        margin-right: 8px;
-    }
-
-    .add-cart-btn:hover {
-        background-color: aliceblue;
-        color: rgb(20, 40, 220);
-    }
-
-    .buy-now-btn {
-        background-color: blanchedalmond;
-        border: 2px salmon;
-    }
-
-    .buy-now-btn:hover {
-        background-color: aliceblue;
+        
+    .h5, p, small {
         color: black;
     }
 
-    @media screen and (max-width: 400px) {
-        .btn-groups button {
-            width: 100%;
-            margin-bottom: 10px;
+    h4 {
+        color: red;
+    }
+    
+    p {
+        margin: 20px 0 50px 0;
+        line-height: 25px;
+    }
+
+    h5 {
+        font-size: 15px;
+    }
+    label,
+    .add span,
+    .color span{
+        width: 25px;
+        height: 25px;
+        background: black;
+        border-radius: 50%;
+        margin: 20px 10px 20px 0;
+    }
+
+    .color span:nth-child(2) {
+        background: #808080;
+    }
+
+    .color span:nth-child(3) {
+        background: #FFD700;
+    }
+
+    .color span:nth-child(4) {
+        background: #C0C0C0;
+    }
+
+    .color span:nth-child(5) {
+        background: #C4D4E0;
+    }
+
+    .color span:nth-child(6) {
+        background: #020202;
+    }
+    .add label,
+    .add span {
+        background: none;
+        border: 1px solid #808080;
+        color: #808080;
+        text-align: center;
+        line-height: 25px;
+    }
+    .add label {
+        padding: 10px 30px 0 20px;
+        border-radius: 50px;
+        line-height: 0;
+    }
+
+    button {
+        width: 140px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        background: #C4D4E0;
+        color: aliceblue;
+        margin-top: 5%;
+        border-radius: 15px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out; 
+    }
+
+    button:hover{  
+        background-color: rgba(255, 4, 4, 0.89); 
+      }
+      button .fa{
+        margin-right: 10px;
+      }
+      .buy{
+        background-color: rgb(0, 130, 206);
+      }
+
+    
+
+    @media only screen and (max-width:768px) {
+        .container {
+            max-width: 90%;
+            margin: auto;
+            height: auto;
+        }
+        .left, .right{
+            width: 100%:
+        }
+
+        .container {
+            flex-direction: column;
         }
     }
+
+    @media only screen and (max-width:511px) {
+        .container {
+            max-width: 100%;
+            padding: 10px;
+            height: auto;
+        }
+        .left, .right {
+            padding: 0;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .option {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
 </style>
-
-
-
 <body>
-    <div class="main wrapper">
-        <div class="container">
-            <div class="product-div">
-                <div class="product-div-left">
-                    <div class="img-container">
-                        <img src="https://img-prd-pim.poorvika.com/prodvarval/Apple-iphone-15-pro-Max-Natural-titanium-Front-Back-View-Thumbnail.png"
-                        alt="Iphone image">
-                    </div>
-                    <div class="hover-container">
-                        <div>
-                            <img src="https://img-prd-pim.poorvika.com/cdn-cgi/image/width=500,height=500,quality=75/product/Apple-iphone-15-pro-max-natural-titanium-256gb-Back-Front-View.png">
-                         </div>
-                         <div>
-                            <img src="https://img-prd-pim.poorvika.com/cdn-cgi/image/width=500,height=500,quality=75/product/Apple-iphone-15-pro-max-natural-titanium-256-Front-Back-Side-View.png">
+    <section>
+        <div class="container flex">
+            <div class="left">
+                <div class="main_image">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360" alt="" class="slide">
 
-                         </div>
-                         <div>
-                            <img src="https://img-prd-pim.poorvika.com/prodvarval/Apple-iphone-15-pro-Max-Natural-titanium-Front-Back-View-Thumbnail.png">
-                         </div>   
-                        </div>
-                    </div>
-                    <div class="product-div-right"
-                        <span class="product-name">(New) Analog Watch - For Men</span>
-                        <span class="product-price">#50.25</span>
-                        <div class="product-rating">
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star"></i></span>
-                            <span><i class="fas fa-star-half-alt"></i></span>
-                            <span>(250 ratings)</span>
-                        </div>
-                    </div>
-                    
-                             <p class="product-description">Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without
-                                rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing
-                                the new systemwith two cameras 
-                             </p>   
-                         <div class="btn-groups">
-                            <button type="button" class="add-cart-btn">
-                                <i class="fas fa-shopping-cart"></i> add to cart
-                            </button>
-                            <button type="button" class="buy-now-btn">
-                                <i class="fas fa-wallet"></i>buy now
-                            </button>
-                         </div>    
-                             
-    
+                </div>
+                <div class="option flex">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360"
+                    onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360')">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674572/Croma%20Assets/Communication/Mobiles/Images/300749_1_tg010y.png?tr=w-360"
+                    onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674572/Croma%20Assets/Communication/Mobiles/Images/300749_1_tg010y.png?tr=w-360')">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674574/Croma%20Assets/Communication/Mobiles/Images/300749_2_e9emfp.png?tr=w-360"
+                    onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674574/Croma%20Assets/Communication/Mobiles/Images/300749_2_e9emfp.png?tr=w-360')">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674577/Croma%20Assets/Communication/Mobiles/Images/300749_3_gr1i0y.png?tr=w-360"
+                    onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674577/Croma%20Assets/Communication/Mobiles/Images/300749_3_gr1i0y.png?tr=w-360')">
+                    <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674558/Croma%20Assets/Communication/Mobiles/Images/300749_4_kyictr.png?tr=w-360"
+                    onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674558/Croma%20Assets/Communication/Mobiles/Images/300749_4_kyictr.png?tr=w-360')">
 
                 </div>
             </div>
+            <div class="right">
+                
+                <h3>IPhone 15 Pro Max</h3>
+                
+                <h4> <small>$</small>1599.99</h4>
+                
+                <p>Display: 6.1 inches (15.54 cm), Super Retina XDR Display, 120 Hz Refresh Rate
+Processor: Apple A17 Pro Chip, Hexa Core
+Camera: 48 MP + 12 MP + 12 MP Triple Rear & 12 MP Front Camera
+Battery: 15W MagSafe Wireless Charging
+                </p>
+        
+                <h5>Color-Rose Gold</h5>
+                <div class="color flex1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h5>Number</h5>
+            <div class="add flex1">
+                <span>-</span>
+                <span>1</span>
+                <span>+</span>
+            </div>
+            <p>Size : <select name="size">
+                <option value="select Size">Select Size</option>
+                <option value="64GB">64GB</option>
+                <option value="128GB">128GB</option>
+                <option value="256GB">256GB</option>
+                <option value="512GB">512GB</option>
+            </select></p>
+            <button>
+                <i class="fa fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+            <button class="buy">
+                <i class="fa fa-shopping-cart"></i>
+                Buy now
+            </button>
         </div>
-    </div>
+    </section>
+    <script>
+        function img(anything) {
+            document.querySelector('.slide').src = anything;
+        }
+
+        function change(change) {
+            const line = document.querySelector('.home');
+            line.style.background = change;
+        }
+    </script>
+    
 </body>
 </html>
