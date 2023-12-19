@@ -137,19 +137,23 @@ class Footer extends HTMLElement {
       class="footer py-16 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 py-15 bg-base-300 text-base-content"
     >
       <nav>
-        <header class="footer-title text-xl ">Cyber Store</header>
+        <header class="footer-title text-xl ">Korng Jak</header>
         <p class="md:w-[30vw] text-gray-400">
-          We are a residential interior design firm located in Portland. Our
-          boutique-studio offers more than. Our boutique studio in Portland specializes in creating personalized and innovative interior spaces that seamlessly blend functionality with aesthetic appeal, ensuring a unique and tailored experience for each client.
+        Best Shopping Experience Guaranteed at Korng Jak Cambodia 
+        Korng Jak: Redefining “Effortless Shopping”
+
+        With Korng Jak Cambodia, you won’t run out of options as we collaborated with hundreds of top brands worldwide.
+        </p>
+        <p class="md:w-[30vw] text-gray-300">
+        Korng Jak is a top electronics store in Kingdom of Cambodia.
         </p>
       </nav>
       <nav>
         <header class="footer-title">Services</header>
-        <a class="link link-hover">Bonus program</a>
-        <a class="link link-hover">Gift cards</a>
+        <a class="link link-hover">Korng Jak Member</a>
+        <a class="link link-hover">Special Promotions</a>
         <a class="link link-hover">Credit and payment</a>
         <a class="link link-hover">Service contacts</a>
-        <a class="link link-hover">Non cash account</a>
         <a class="link link-hover">Payment</a>
       </nav>
       <nav>
@@ -158,20 +162,21 @@ class Footer extends HTMLElement {
         <div class="flex items-center gap-x-2 mt-2">
 
                 <i class="fas fa-map-marker-alt text-md"></i>
-                <div >Poipet,</div>
-              <div>7makara 33</div>
+                <div >Address: #29, Street 217, Sangkat Veal Vong,</div>
+              <div>Khan 7 Makara, Phnom Penh,
+              Cambodia</div>
               </div></a>
                  <a class="link link-hover">
         <div class="flex items-center gap-x-1 mt-2">
 
                 <i class="fas fa-phone-alt text-md"></i>
-                <div>012666779</div>
+                <div>Tel: +855 (0)111 777 / 777 4449</div>
               </div></a>
                  <a class="link link-hover">
         <div class="flex items-center gap-x-2 mt-2">
 
                 <i class="fas fa-envelope text-md"></i>
-                <div>darathpenn@gmail.com</div>
+                <div>KorngJakCambodia@gmail.com</div>
               </div></a>
       </nav>
       <nav>
