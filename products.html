@@ -11,16 +11,17 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="./componets.js"></script>
+  <script src="/js/componets.js"></script>
 
 
 </head>
 
 <body class=" bg-white w-screen h-[150vh] scroll-smooth ">
   <my-navbar></my-navbar>
-  <main class=" main grid grid-cols-12  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full h-[150vh] bg-white">
+  <div class="pb-10"></div>
+  <main class=" main grid grid-cols-12 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 w-full h-[150vh] bg-white">
   <div id="custom-grid-cols" class="grid list flex-1 overflow-auto  col-span-3 pr-5 pb-5 grid items-start justify-start">
-      <ul class="menu w-[305px] text-black ">
+      <ul class="menu w-[283px] text-black ">
         <li>
           <details open>
             <summary id="dropdown-color" class=" font-semibold border-b px-0 min-w-screen  rounded-none pr-1.5 hover:bg-white ">Price</summary>
@@ -270,6 +271,8 @@
 
    <div id="custom-width" class="grid list flex-1 overflow-auto items-start justify-center gap-x-5 col-span-9 w-full pb-5 ju overflow-y-auto min-h-screen flex-1">
       <div" id="custom-column" class="grid grid-cols-3 gap-5 sm:px-0 md:px-0 lg:px-5">
+                <a href="productdetail.html" >
+
         <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
@@ -291,6 +294,8 @@
           ></i>
           </div>
         </div>
+                </a>
+
         <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
           <figure class="px-10 pt-10">
             <img
