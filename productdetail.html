@@ -8,31 +8,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     *{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
-        border-radius: 15px;
+
     }
 
     body {
         font-family: sans-serif;
-        background: #C4D4E0;
+        background: white;
     }
     .container{
-        max-width: 75%;
+        min-width: 100%;
         margin: auto;
         height: 80vh;
-        margin-top: 5%;
+
         background: white;
         box-shadow: 5px 5px 10px 3px rgba(red, green, blue, alpha);
     }
     .left,.right{
         width: 50%;
-        padding: 30px;
+        /* padding: 30px; */
 
     }
 
@@ -57,23 +61,15 @@
         padding: 10px;
     }
 
-    .right {
+    /* .right {
         padding: 50px 100px 50px 50px;
-    }
+    } */
     
-    h3 {
-        color: rgba(163, 62, 3, 0.781);
-        margin: 20px 0 20px 0;
-        font-size: 25px;
-    }
         
     .h5, p, small {
         color: black;
     }
 
-    h4 {
-        color: red;
-    }
     
     p {
         margin: 20px 0 50px 0;
@@ -115,10 +111,11 @@
     .add label,
     .add span {
         background: none;
-        border: 1px solid #808080;
-        color: #808080;
+        border: 1px solid black;
+        color: black;
         text-align: center;
         line-height: 25px;
+        justify-content: center;
     }
     .add label {
         padding: 10px 30px 0 20px;
@@ -140,7 +137,7 @@
         transition: background-color 0.3s ease-in-out; 
     }
 
-    button:hover{  
+    /* button:hover{  
         background-color: rgba(255, 4, 4, 0.89); 
       }
       button .fa{
@@ -148,18 +145,22 @@
       }
       .buy{
         background-color: rgb(0, 130, 206);
-      }
+      } */
 
     
 
-    @media only screen and (max-width:768px) {
+    @media only screen and (max-width:900px) {
         .container {
-            max-width: 90%;
-            margin: auto;
+            min-width: 100%;
+            /* margin: auto; */
             height: auto;
+            /* padding: 20px; */
+        }
+        #padding-iphone {
+            padding-top: 30px;
         }
         .left, .right{
-            width: 100%:
+            min-width: 100%
         }
 
         .container {
@@ -169,34 +170,36 @@
 
     @media only screen and (max-width:511px) {
         .container {
-            max-width: 100%;
-            padding: 10px;
+            min-width: 100%;
+            /* padding: 20px; */
             height: auto;
+
+
         }
         .left, .right {
             padding: 0;
         }
-        img {
+        /* img {
             width: 100%;
             height: 100%;
-        }
+        } */
 
         .option {
             display: flex;
             flex-wrap: wrap;
         }
     }
-
 </style>
 <body>
-    <section>
-        <div class="container flex">
+     <my-navbar></my-navbar>
+    <section class="min-w-screen">
+        <div class="container flex pt-12  min-w-screen gap-x-10 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5  sm:px-5 px-5">
             <div class="left">
-                <div class="main_image">
+                <div class="main_image grid items-center justify-center">
                     <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360" alt="" class="slide">
 
                 </div>
-                <div class="option flex">
+                <div class="option flex mt-5">
                     <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360"
                     onclick="img('https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674571/Croma%20Assets/Communication/Mobiles/Images/300749_0_y3aw57.png?tr=w-360')">
                     <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674572/Croma%20Assets/Communication/Mobiles/Images/300749_1_tg010y.png?tr=w-360"
@@ -210,49 +213,57 @@
 
                 </div>
             </div>
-            <div class="right">
+            <div id="padding-iphone" class="right pt-4">
                 
-                <h3>IPhone 15 Pro Max</h3>
-                
-                <h4> <small>$</small>1599.99</h4>
-                
+                <h3 class="font-bold text-2xl text-black">IPhone 15 Pro Max</h3>
+                <div>
+                    <h4 class="text-black text-xl py-1.5"> <small>$</small>1599.99</h4>
+                    <!-- <h4 class="text-black text-xl py-1.5"> <small>$</small>1599.99</h4> -->
+                    <h5>Color-Rose Gold</h5>
+                  <div class="color flex1">
+                  <div class="flex items-center gap-x-2">
+                    <p>Select Color: </p>
+                    <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  </div>
+                </div>      
                 <p>Display: 6.1 inches (15.54 cm), Super Retina XDR Display, 120 Hz Refresh Rate
 Processor: Apple A17 Pro Chip, Hexa Core
 Camera: 48 MP + 12 MP + 12 MP Triple Rear & 12 MP Front Camera
 Battery: 15W MagSafe Wireless Charging
-                </p>
-        
-                <h5>Color-Rose Gold</h5>
-                <div class="color flex1">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                </p>              
             </div>
-            <h5>Number</h5>
+            <h5 class="pt-1">Quantity</h5>
             <div class="add flex1">
-                <span>-</span>
+                <span class="hover:cursor-pointer ">-</span>
                 <span>1</span>
-                <span>+</span>
+                <span  class="hover:cursor-pointer ">+</span>
             </div>
-            <p>Size : <select name="size">
-                <option value="select Size">Select Size</option>
+            <p>Size : <select class="bg-white" name="size">
+                <option class="bg-white" value="select Size">Select Size</option>
                 <option value="64GB">64GB</option>
                 <option value="128GB">128GB</option>
                 <option value="256GB">256GB</option>
                 <option value="512GB">512GB</option>
             </select></p>
-            <button>
-                <i class="fa fa-shopping-cart"></i>
-                Add to Cart
-            </button>
-            <button class="buy">
-                <i class="fa fa-shopping-cart"></i>
-                Buy now
-            </button>
+            <div class="my-8 flex justify-start gap-x-5">
+
+                <div class="bg-white hover:text-white hover:bg-blue-500 hover:border-none rounded-md border border-black text-black p-3 px-6 w-fit hover:cursor-pointer ">
+                    
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to Cart
+                </div>
+                <div class="bg-black hover:bg-red-500 hover:border-none rounded-md border border-black text-white p-3 px-8 w-fit hover:cursor-pointer ">
+                    <i class="fa fa-shopping-cart"></i>
+                    Buy now
+                </div>
+            </div>
         </div>
     </section>
+      <my-footer> </my-footer>
     <script>
         function img(anything) {
             document.querySelector('.slide').src = anything;
@@ -263,6 +274,8 @@ Battery: 15W MagSafe Wireless Charging
             line.style.background = change;
         }
     </script>
+      <script src="/js/componets.js"></script>
+      <script src="./js/productdetail.js"></script>
     
 </body>
 </html>

@@ -23,7 +23,7 @@
   }
 }
 #logo {
-  animation: rotateAnimation 20s linear infinite;
+  animation: rotateAnimation 1s linear infinite;
 }
 
 #text-card {
