@@ -143,10 +143,12 @@ class Footer extends HTMLElement {
         Korng Jak: Redefining “Effortless Shopping”
 
         With Korng Jak Cambodia, you won’t run out of options as we collaborated with hundreds of top brands worldwide.
-        </p>
-        <p class="md:w-[30vw] text-gray-300">
+        <br/>
         Korng Jak is a top electronics store in Kingdom of Cambodia.
+
         </p>
+
+
       </nav>
       <nav>
         <header class="footer-title">Services</header>
