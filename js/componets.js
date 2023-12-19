@@ -134,7 +134,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <footer
-      class="footer py-16 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 py-15 bg-base-300 text-base-content"
+      class="footer py-16 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 py-15 bg-black text-base-content"
     >
       <nav>
         <header class="footer-title text-xl ">Korng Jak</header>
