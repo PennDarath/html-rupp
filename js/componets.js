@@ -2,7 +2,7 @@ class NavBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
        <section
-      class="flex justify-between min-w-screen z-50 py-4 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
+      class="flex border-b justify-between min-w-screen z-50 py-4 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
     >
       <div class="flex items-center gap-x-10 justify-between w-full">
         <div class="flex items-center gap-x-1">
@@ -14,7 +14,7 @@ class NavBar extends HTMLElement {
             id="logo"
             class="border-none pb-3 rounded-full"
           />
-          <p class="text-2xl text-black font-medium">Pherk Store</p>
+          <p class="text-2xl text-black font-medium">Korng Jak</p>
         </div>
         <div class="flex-1 max-sm:hidden relative">
           <input
@@ -26,7 +26,6 @@ class NavBar extends HTMLElement {
             ><i class="fa fa-search"></i
           ></span>
         </div>
-
         <ul class="flex items-center gap-x-5 max-lg:hidden">
           <nav>
             <ul class="flex gap-x-10">
@@ -62,7 +61,7 @@ class NavBar extends HTMLElement {
               ></a>
             </li>
             <li>
-              <a href="#"
+              <a href="/login/login.html"
                 ><span class="text-black"
                   ><i
                     id="icon-fill"
@@ -139,9 +138,9 @@ class Footer extends HTMLElement {
     >
       <nav>
         <header class="footer-title text-xl ">Cyber Store</header>
-        <p class="w-[30vw]">
+        <p class="md:w-[30vw] text-gray-400">
           We are a residential interior design firm located in Portland. Our
-          boutique-studio offers more than.
+          boutique-studio offers more than. Our boutique studio in Portland specializes in creating personalized and innovative interior spaces that seamlessly blend functionality with aesthetic appeal, ensuring a unique and tailored experience for each client.
         </p>
       </nav>
       <nav>
@@ -154,13 +153,26 @@ class Footer extends HTMLElement {
         <a class="link link-hover">Payment</a>
       </nav>
       <nav>
-        <header class="footer-title">Assistence to the buyer</header>
-        <a class="link link-hover">Find an order</a>
-        <a class="link link-hover">Terms of delivery</a>
-        <a class="link link-hover">Exchange and return of goods</a>
-        <a class="link link-hover">Guarantee</a>
-        <a class="link link-hover">Frequently asked questions</a>
-        <a class="link link-hover">Terms of use of the site</a>
+        <header class="footer-title">Address</header>
+        <a class="link link-hover">
+        <div class="flex items-center gap-x-2 mt-2">
+
+                <i class="fas fa-map-marker-alt text-md"></i>
+                <div >Poipet,</div>
+              <div>7makara 33</div>
+              </div></a>
+                 <a class="link link-hover">
+        <div class="flex items-center gap-x-1 mt-2">
+
+                <i class="fas fa-phone-alt text-md"></i>
+                <div>012666779</div>
+              </div></a>
+                 <a class="link link-hover">
+        <div class="flex items-center gap-x-2 mt-2">
+
+                <i class="fas fa-envelope text-md"></i>
+                <div>darathpenn@gmail.com</div>
+              </div></a>
       </nav>
       <nav>
         <header class="footer-title">Social</header>
