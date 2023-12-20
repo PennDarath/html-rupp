@@ -18,5 +18,10 @@
   background-color: red;
   color: red;
 }
+#icon-fill-product {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: gray;
 
+}
 
