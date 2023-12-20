@@ -137,7 +137,7 @@ class Footer extends HTMLElement {
       class="footer py-16 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 py-15 bg-black text-base-content"
     >
       <nav>
-        <header class="footer-title text-xl ">Korng Jak</header>
+        <header class="footer-title text-xl text-gray-400">Korng Jak</header>
         <p class="md:w-[30vw] text-gray-400">
         Best Shopping Experience Guaranteed at Korng Jak Cambodia 
         Korng Jak: Redefining “Effortless Shopping”
@@ -151,17 +151,17 @@ class Footer extends HTMLElement {
 
       </nav>
       <nav>
-        <header class="footer-title">Services</header>
-        <a class="link link-hover">Korng Jak Member</a>
-        <a class="link link-hover">Special Promotions</a>
-        <a class="link link-hover">Credit and payment</a>
-        <a class="link link-hover">Service contacts</a>
-        <a class="link link-hover">Payment</a>
+        <header class="footer-title text-gray-400">Services</header>
+        <a class="link link-hover text-gray-400">Korng Jak Member</a>
+        <a class="link link-hover text-gray-400">Special Promotions</a>
+        <a class="link link-hover text-gray-400">Credit and payment</a>
+        <a class="link link-hover text-gray-400">Service contacts</a>
+        <a class="link link-hover text-gray-400">Payment</a>
       </nav>
-      <nav>
+      <nav class="text-gray-400">
         <header class="footer-title">Address</header>
         <a class="link link-hover">
-        <div class="flex items-center gap-x-2 mt-2">
+        <div class="flex items-center gap-x-2 mt-2 text-gray-400">
 
                 <i class="fas fa-map-marker-alt text-md"></i>
                 <div >Address: #29, Street 217, Sangkat Veal Vong,
@@ -183,7 +183,7 @@ class Footer extends HTMLElement {
                 <div>KorngJakCambodia@gmail.com</div>
               </div></a>
       </nav>
-      <nav>
+      <nav class="text-gray-400">
         <header class="footer-title">Social</header>
         <div class="grid grid-flow-col gap-4">
           <a
