@@ -104,7 +104,7 @@ class NavBar extends HTMLElement {
                   <p
                     class="font-serif text-xl text-black font-bold cursor-default"
                   >
-                    Cyber Store
+                    KorngJak
                   </p>
                 </div>
                 <label for="my-drawer-3" class="drawer-overlay">
@@ -114,13 +114,13 @@ class NavBar extends HTMLElement {
                 </label>
               </div>
               <li>
-                <a href="index.html" class="text-black font-semibold hover:bg-black hover:text-white">Home</a>
+                <a id="home-nav" href="index.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
               </li>
               <li>
-                <a href="products.html" class="text-black font-semibold hover:bg-black hover:text-white">Products</a>
+                <a id="product-nav" href="products.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
               </li>
               <li>
-                <a href="contact.html" class="text-black font-semibold hover:bg-black hover:text-white">Contact Us</a>
+                <a id="contact-nav" href="contact.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -164,11 +164,13 @@ class Footer extends HTMLElement {
         <div class="flex items-center gap-x-2 mt-2">
 
                 <i class="fas fa-map-marker-alt text-md"></i>
-                <div >Address: #29, Street 217, Sangkat Veal Vong,</div>
-              <div>Khan 7 Makara, Phnom Penh,
-              Cambodia</div>
+                <div >Address: #29, Street 217, Sangkat Veal Vong,
+                </div>
+             
               </div></a>
+
                  <a class="link link-hover">
+
         <div class="flex items-center gap-x-1 mt-2">
 
                 <i class="fas fa-phone-alt text-md"></i>

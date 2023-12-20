@@ -9,25 +9,13 @@
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const pathName = window.location.pathname;
-        const pageName = pathName.split("/").pop();
-
-        if (pageName === "contact.html") {
-          const homeLink = document.getElementById("contact");
-          if (homeLink) {
-            homeLink.classList.add("font-bold", "text-black");
-          }
-        }
-      });
-    </script>
+       
     <script src="/js/componets.js"></script>
 </head>
 <body class="min-h-screen bg-white">
   <my-navbar></my-navbar>
   </section>
-  <section class=" border-black/10 bg-stone-400/20  pt-[40px] pb-[40px] rounded-3xd 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5">
+  <section class="bg-stone-400/20  pt-[60px] pb-[40px] rounded-3xd 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5">
     <div class=" grid grid-cols-1 md:grid-cols-2 gap-x-5">
       <div>
         <h2 class="mb-4 font-bold text-2xl md:text-3xl text-black">
@@ -106,7 +94,7 @@
         </div>
       </div> -->
 
-    <div class="   min-w-full ">
+    <div class="   min-w-full h-full">
       <div class=" ">
 
         <iframe class=" rounded-md w-full rounded-lg "
@@ -122,6 +110,7 @@
 
 
    <my-footer> </my-footer>
+   <script src="/js/contact.js"></script>
 
 </body>
 

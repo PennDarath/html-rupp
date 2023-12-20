@@ -33,5 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
         homeLink.classList.add("font-bold", "text-black");
       }
     }
+    if (pageName === "products.html") {
+      const homeLink = document.getElementById("product-nav");
+      if (homeLink) {
+        homeLink.classList.add("font-bold", "text-white", "bg-black");
+      }
+    }
+  
   });
+
  
