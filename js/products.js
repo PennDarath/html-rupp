@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const pageName = pathName.split("/").pop();
            
 
-    if (pageName === "products.html") {
+    if (pageName === "products.php") {
       const homeLink = document.getElementById("products");
       if (homeLink) {
         homeLink.classList.add("font-bold", "text-black");
       }
     }
-    if (pageName === "products.html") {
+    if (pageName === "products.php") {
       const homeLink = document.getElementById("product-nav");
       if (homeLink) {
         homeLink.classList.add("font-bold", "text-white", "bg-black");

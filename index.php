@@ -1,3 +1,4 @@
+<!--  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,21 +19,215 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
 
-    <script src="/js/componets.js"></script>
+#icon-user {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+#icon-cart {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+#icon-heart {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+.active {
+  background-color: red;
+  color: red;
+}
+#icon-fill-product {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: gray;
+
+}
+
+
+    </style>
+    <style>
+      #icon-fill {
+  color: black;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: white;
+
+}
+/* #icon-cart {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+#icon-heart {
+  color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+} */
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#logo {
+  animation: rotateAnimation 1s linear infinite;
+}
+
+#text-card {
+
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+    </style>
+   
   </head>
-  <my-navbar></my-navbar>
+
   <body class="min-h-screen bg-white w-screen scroll-smooth">
+<!-- <my-navbar></my-navbar> -->
+    <section
+      class="flex border-b justify-between min-w-screen py-4 z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
+    >
+      <div class="flex items-center gap-x-10 justify-between w-full">
+        <div class="flex items-center gap-x-1">
+          <img
+            src="https://media.istockphoto.com/id/1162451364/vector/valknut-symbol-icon.jpg?s=612x612&w=0&k=20&c=h6Svj7Ddads1DVDf8wh_G2PJFhV4IJvO-ZSdpRDFrac="
+            alt="Logo"
+            width="40px"
+            height="40px"
+            id="logo"
+            class="border-none pb-3 rounded-full"
+          />
+          <p class="text-xl text-black font-medium">Korng Jak</p>
+        </div>
+        <div class="flex-1 max-sm:hidden relative">
+          <input
+            placeholder="Search"
+            class="input w-full pl-11 h-11 text-sm bg-gray-100 text-black"
+          />
+
+          <span class="text-gray-400 absolute top-3 left-5 text-sm"
+            ><i class="fa fa-search"></i
+          ></span>
+        </div>
+        <ul class="flex items-center gap-x-1 max-lg:hidden">
+          <nav>
+            <ul class="flex gap-x-10">
+              <li>
+                <a id="home" href="index.php" class="text-sm">Home</a>
+              </li>
+              <li>
+                <a id="products" href="products.php" class="text-sm"
+                  >Product</a
+                >
+              </li>
+              <a id="contact" href="contact.php" class="text-sm"
+                >Contact Us</a
+              >
+              <li></li>
+            </ul>
+          </nav>
+          <div class="flex items-center gap-x-5">
+            <li>
+              <a href="#"
+                ><span class="text-black fill"
+                  ><i id="icon-fill" class="fa fa-heart text-sm"></i></span
+              ></a>
+            </li>
+            <li>
+              <a href="#"
+                ><span class="text-black"
+                  ><i
+                    id="icon-fill"
+                    class="fa fa-shopping-cart text-sm"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </li>
+            <li>
+              <a href="./login.php"
+                ><span class="text-black"
+                  ><i
+                    id="icon-fill"
+                    class="fa fa-user text-sm"
+                    aria-hidden="true"
+                  ></i></span
+              ></a>
+            </li>
+          </div>
+        </ul>
+        <div class="drawer z-50 lg:hidden w-fit flex justify-end">
+          <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content flex flex-col">
+            <div class="w-full">
+              <div class="lg:hidden">
+                <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="drawer-side">
+            <label for="my-drawer-3" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 h-full bg-white">
+              <div class="flex items-center justify-between pb-5">
+                <div class="flex">
+                  <div></div>
+                  <p
+                    class="font-serif text-xl text-black font-bold cursor-default"
+                  >
+                    KorngJak
+                  </p>
+                </div>
+                <label for="my-drawer-3" class="drawer-overlay">
+                  <div class="cursor-pointer rounded-sm p-0.5 text-black">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+                </label>
+              </div>
+              <li>
+                <a id="home-nav" href="index.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
+              </li>
+              <li>
+                <a id="product-nav" href="products.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
+              </li>
+              <li>
+                <a id="contact-nav" href="contact.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section
       id="content"
       class="bg-[#0F0F0F] 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5"
     >
       <div
-        class="w-full max-md:flex-col flex justify-start max-md:pt-5 items-center xl:pl-20"
+        class="w-full  max-md:flex-col flex justify-start max-md:pt-5 items-center "
       >
         <div
-          class="text-white w-full max-md:justify-center max-md:pt-10 max-md:grid"
+          class="text-white  w-screen max-md:justify-center max-md:pt-10 max-md:grid"
         >
           <p class="text-xl text-gray-500 max-md:text-center">Pro.Beyond</p>
           <h3 class="text-6xl pb-3 font-extralight max-md:text-center">
@@ -41,7 +236,7 @@
           <p class="text-base pb-4 text-gray-500 max-md:text-center">
             Created to change everything for the better. For everyone
           </p>
-          <a class="max-md:justify-center max-md:grid" href="products.html"
+          <a class="max-md:justify-center max-md:grid" href="products.php"
             ><button
               class="btn text-white border-white bg-[#0F0F0F] hover:bg-[#fff] hover:text-black w-44 mt-3"
             >
@@ -50,11 +245,11 @@
           >
         </div>
         <div
-          class="lg:pr-20 lg:pt-28 md:pt-20 max-md:w-60 max-md:pt-20 lg:w-[600px]"
+          class="lg:pr-20  lg:pt-28 md:pt-20 max-md:w-60 max-md:pt-20 lg:w-[700px]"
         >
           <img
             class="max-md:pt-5"
-            src="/img/Iphone Image.png"
+            src="./img/Iphone Image.png"
             height="100%"
             width="100%"
             alt
@@ -63,7 +258,7 @@
       </div>
     </section>
     <section class="">
-      <div class="min-md:flex-col lg:flex h-fit w-full lg:h-[650px]">
+      <div class="min-md:flex-col lg:flex h-fit w-full lg:h-[600px]">
         <div
           class="lg:grid grid-rows-2 lg:grid-cols-2 lg:grid-flow-col lg:w-[50%] h-full"
         >
@@ -71,18 +266,18 @@
             class="lg:col-start-1 space-y-10 w-full h-full md:justify-start sm:justify-center items-center items-center min-sm:flex-col md:flex h-full lg:col-end-3 lg:row-start-1 lg:row-end-2"
           >
             <div
-              class=" max-md:h-80 max-md:w-full max-md:flex max-md:justify-center lg:h-full lg:w-[50%] flex"
+              class=" max-md:h-80 max-md:w-full max-md:flex max-md:justify-center h-72 lg:w-[50%] flex"
             >
               <img
                 class="flex justify-center max-md:h-80 max-md:w-80 max-md:hidden"
-                src="/img/PlayStation.png"
+                src="./img/PlayStation.png"
                 height="100%"
                 width="150%"
                 alt
               />
               <img
                 class="flex justify-center md:hidden "
-                src="/img/PlayStation (1).png"
+                src="./img/PlayStation (1).png"
                 height="100%"
                 width="150%"
                 alt
@@ -92,10 +287,10 @@
             <div class="lg:w-[50%] lg:pr-7 flex justify-center">
               <div class="max-md:px-5 ">
 
-                <p class="text-4xl font-semibold text-black pb-3 text-center w-full">
+                <p class="text-3xl font-semibold text-black pb-3 text-start w-full">
                   Play Station 5
                 </p>
-                <p class="text-base text-gray-500">
+                <p class="text-sm text-gray-500">
                   Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O
                   will redefine your PlayStation experience.
                 </p>
@@ -106,18 +301,18 @@
             class="lg:row-start-2  max-md:my-20 lg:row-end-3 w-full h-full md:justify-start sm:justify-center items-center items-center min-sm:flex-col md:flex"
           >
             <div
-              class="max-md:h-72 max-md:w-full md:pr-14 lg:pr-0 justify-center lg:h-80 lg:w-[30%] flex"
+              class="max-md:h-64 max-md:w-full md:pr-14 lg:pr-0 justify-center lg:h-74 lg:w-[30%] flex"
             >
               <img
-              class="flex justify-center max-md:h-72 max-md:w-80 max-md:hidden"
-                src="/img/hero__gnfk5g59t0qe_xlarge_2x 1.png"
+              class="flex justify-center max-md:h-64 max-md:w-74 max-md:hidden"
+                src="./img/hero__gnfk5g59t0qe_xlarge_2x 1.png"
                 height="100%"
                 width="150%"
                 alt
               />
                <img
                 class="flex justify-center md:hidden  max-md:h-72 max-md:w-80 "
-                src="/img/hero__gnfk5g59t0qe_xlarge_2x 1 (1).png"
+                src="./img/hero__gnfk5g59t0qe_xlarge_2x 1 (1).png"
                 height="100%"
                 width="150%"
                 alt
@@ -126,12 +321,12 @@
             <div class="lg:w-[70%] px-7 flex justify-center max-md:pt-10">
               <div>
 
-                <p class="text-4xl font-extralight text-black pb-3">Apple</p>
-                <p class="text-4xl font-extralight text-black pb-3">
+                <p class="text-3xl font-extralight text-black pb-3">Apple</p>
+                <p class="text-3xl font-extralight text-black pb-3">
                   AirPod
-                  <span class="text-4xl font-semibold text-black">Max</span>
+                  <span class="text-3xl font-semibold text-black">Max</span>
                 </p>
-                <p class="text-base text-gray-500">
+                <p class="text-sm text-gray-500">
                   Computational audio. Listen, it's powerful
                 </p>
               </div>
@@ -141,31 +336,31 @@
             class="lg:col-start-2 lg:h-full bg-black/80 md:h-[300px] lg:col-end-3 w-full md:justify-start sm:justify-center items-center items-center min-sm:flex-col md:flex"
           >
             <div
-              class="max-md:h-72 max-md:w-full  md:pr-14 lg:pr-0 justify-center lg:h-full lg:w-[40%] flex"
+              class="max-md:h-64 max-md:w-full md:pr-14 lg:pr-0 justify-center lg:h-full lg:w-[40%] flex"
             >
               <img
-                class="flex justify-center max-md:h-80 max-md:w-80 max-md:hidden"
-                src="/img/image 36.png"
-                height="80%"
+                class="flex justify-center max-md:h-72 max-md:w-72 max-md:hidden"
+                src="./img/image 36.png"
+                height="100%"
                 width="100%"
                 alt
               />
                 <img
                 class="flex justify-center md:hidden  max-md:h-72 max-md:w-80 "
-                src="/img/image 36 (1).png"
+                src="./img/image 36 (1).png"
                 height="100%"
                 width="150%"
                 alt
               />
             </div>
-            <div class="lg:w-[60%] px-7  flex justify-center max-md:pb-10">
+            <div class="lg:w-[60%] px-7 flex justify-center max-md:pb-10">
               <div>
-                <p class="text-4xl font-extralight text-white pb-3">Apple</p>
-                <p class="text-4xl font-extralight text-white pb-3">
+                <p class="text-3xl font-extralight text-white pb-3">Apple</p>
+                <p class="text-3xl font-extralight text-white pb-3">
                   Vision
-                  <span class="text-4xl font-semibold text-white">Pro</span>
+                  <span class="text-3xl font-semibold text-white">Pro</span>
                 </p>
-                <p class="text-base text-gray-400">
+                <p class="text-sm text-gray-400">
                   An immersive way to experience entertainment
                 </p>
               </div>
@@ -189,15 +384,15 @@
             <div class="Lg:w-[50%] px-5 flex justify-center ">
               <div>
 
-                <p class="text-4xl font-extralight text-black text-start max-md:text-center pb-3">
+                <p class="text-3xl font-extralight text-black text-start max-md:text-center pb-3">
                   MacBook
-                  <span class="text-4xl font-semibold text-black">Air</span>
+                  <span class="text-3xl font-semibold text-black">Air</span>
                 </p>
-                <p class="text-base text-gray-400">
+                <p class="text-sm text-gray-400">
                   The new 15inch MacBook Air makes room for more of what you love
                   with a spacious Liquid Retina display.
                 </p>
-                <a class="max-md:justify-center max-md:grid" href="products.html"
+                <a class="max-md:justify-center max-md:grid" href="products.php"
                 ><button
                 class="btn text-black bg-gray-200/90 border-black m border hover:bg-black hover:text-white w-44 mt-5"
                 >
@@ -211,7 +406,7 @@
             >
               <img
                 class="w-full h-full py-5"
-                src="/img/Cover.png"
+                src="./img/Cover.png"
                 height="80%"
                 width="100%"
                 alt
@@ -326,122 +521,45 @@
         class="grid items-center w-full gap-5 justify-center xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4"
       >
 
-      <div class="flex justify-center">
-<a href="productdetail.html">
-        <div class="card w-72 h-[460px] bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">  <a href="productdetail.html">
-          <figure class="px-10 pt-10">
+
+    <a href="productdetail.php" >
+
+        <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
             <img
-            src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674022/Croma%20Assets/Communication/Mobiles/Images/300819_0_aunzde.png?tr=w-640"
-            alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+              src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674022/Croma%20Assets/Communication/Mobiles/Images/300819_0_aunzde.png?tr=w-640"
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
           </figure>
           <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Apple iPhone 15 Pro Max 128GB Deep Purple (MQ9T3RX/A)</p>
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
             <p class="card-title">$1,599.00</p>
             <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn w-[90%] border bg-black hover:bg-black text-white">Buy Now</button>
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
           <div class="absolute right-3 top-2 hover:cursor-pointer">
-            <i
-            id="icon-fill-product"
+             <i
+             id="icon-fill-product"
             class="justify-center  items-end grid fa fa-heart text-2xl"
             aria-hidden="true"
-            ></i>
+          ></i>
           </div>
         </div>
         </a>
-      </div>
-      <div class="flex justify-center">
-      <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
+                <a href="productdetail.php">
+
+           <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
             <img
               src="https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
-          </figure>
-          <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Apple iPhone 15 Pro Max 128GB Deep Gray (MQ9T3RX/A)</p>
-            <p class="card-title">$1,369.00</p>
-            <div class="card-actions  w-full justify-center pt-1 ">
-              <button class="btn w-[90%] border hover:bg-black bg-black text-white">Buy Now</button>
-            </div>
-          </div>
-          <div class="absolute right-3 top-2 hover:cursor-pointer">
-             <i
-             id="icon-fill-product"
-            class="justify-center  items-end grid fa fa-heart text-2xl"
-            aria-hidden="true"
-          ></i>
-          </div>
-        </div>
-        </a>
-        </div>
-         <div class="flex justify-center">
-        <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://shop.oppomobile.nz/cdn/shop/files/OPPOFindN3EcommerceImage.png?v=1701390977&width=2048"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
-          </figure>
-          <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">OPPO Find N3</p>
-            <p class="card-title">$1,899.00</p>
-            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
-            </div>
-          </div>
-          <div class="absolute right-3 top-2 hover:cursor-pointer">
-             <i
-             id="icon-fill-product"
-            class="justify-center  items-end grid fa fa-heart text-2xl"
-            aria-hidden="true"
-          ></i>
-          </div>
-          </div>
-          </a>
-        </div>
-         <div class="flex justify-center">
-          <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/09/iphone-15-1.png"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
-          </figure>
-          <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">
-              Apple iPhone 15 128GB Pink (MQ9T3RX/A)
 
-            </p>
-            <p class="card-title">$799.99</p>
-            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
-            </div>
-          </div>
-          <div class="absolute right-3 top-2 hover:cursor-pointer">
-             <i
-             id="icon-fill-product"
-            class="justify-center  items-end grid fa fa-heart text-2xl"
-            aria-hidden="true"
-          ></i>
-          </div>
-        </div>
-        </a>
-        </div>
-         <div class="flex justify-center">
-        <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
-            <img
-              src="https://www.businessmobiles.com/wp-content/uploads/2022/12/Samsung-Galaxy-Z-Flip4-All-Colours-B.webp"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
           </figure>
           <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Samsung Galaxy Z Flip 4</p>
-            <p class="card-title">$1,199.00</p>
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
             <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
           <div class="absolute right-3 top-2 hover:cursor-pointer">
@@ -453,20 +571,19 @@
           </div>
         </div>
         </a>
-        </div>
-         <div class="flex justify-center">
-        <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
+    <a href="productdetail.php" >
+
+        <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
             <img
-              src="https://techmonklabs.com/cdn/shop/collections/Series9.png?v=1694717241"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+              src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674022/Croma%20Assets/Communication/Mobiles/Images/300819_0_aunzde.png?tr=w-640"
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
           </figure>
           <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Apple Watch Series 9</p>
-            <p class="card-title">$599.00</p>
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
             <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
           <div class="absolute right-3 top-2 hover:cursor-pointer">
@@ -478,20 +595,20 @@
           </div>
         </div>
         </a>
-        </div>
-         <div class="flex justify-center">
-        <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
+                <a href="productdetail.php">
+
+           <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
             <img
-              src="https://images.samsung.com/is/image/samsung/p6pim/levant/2302/gallery/levant-galaxy-s23-s918-sm-s918blicmea-534852811?$650_519_PNG$"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+              src="https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
+
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
           </figure>
           <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Samsung Galaxy S23 Ultra (Lavender)</p>
-            <p class="card-title">$1,699.00</p>
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
             <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
           <div class="absolute right-3 top-2 hover:cursor-pointer">
@@ -503,20 +620,19 @@
           </div>
         </div>
         </a>
-        </div>
-<div class="flex justify-center">
-        <a href="productdetail.html">
-        <div class="card w-72 h-[460px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-          <figure class="px-10 pt-10">
+    <a href="productdetail.php" >
+
+        <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
             <img
-              src="https://shop.belong.com.au/cdn/shop/files/removal.ai__tmp-64a2306d1c556_0OSCKW_1445x.png?v=1688350868"
-              alt="Shoes" class="rounded-xl object-fill w-50 h-52" />
+              src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674022/Croma%20Assets/Communication/Mobiles/Images/300819_0_aunzde.png?tr=w-640"
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
           </figure>
           <div class="card-body w-full items-center justify-end text-center text-black  ">
-            <p id="text-card"class="w-full h-12">Apple Iphone 13 Pro Max</p>
-            <p class="card-title">$1,139.00</p>
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
             <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-              <button class="btn hover:bg-black w-[90%] bg-black border text-white">Buy Now</button>
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
             </div>
           </div>
           <div class="absolute right-3 top-2 hover:cursor-pointer">
@@ -528,7 +644,81 @@
           </div>
         </div>
         </a>
+                <a href="productdetail.php">
+
+           <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
+            <img
+              src="https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
+
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
         </div>
+        </a>
+    <a href="productdetail.php" >
+
+        <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
+            <img
+              src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1694674022/Croma%20Assets/Communication/Mobiles/Images/300819_0_aunzde.png?tr=w-640"
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        </a>
+                <a href="productdetail.php">
+
+           <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+          <figure class="px-10 pt-10 ">
+            <img
+              src="https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
+
+              alt="Shoes" class="rounded-xl object-fill w-fit h-fit" />
+          </figure>
+          <div class="card-body w-full items-center justify-end text-center text-black  ">
+            <p id="text-card"class="w-full h-12 ">Apple iPhone 15 Pro Max</p>
+            <p class="card-title">$1,599.00</p>
+            <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+              <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
+            </div>
+          </div>
+          <div class="absolute right-3 top-2 hover:cursor-pointer">
+             <i
+             id="icon-fill-product"
+            class="justify-center  items-end grid fa fa-heart text-2xl"
+            aria-hidden="true"
+          ></i>
+          </div>
+        </div>
+        </a>
+
         
 
       </div>
@@ -628,7 +818,7 @@
           <p class="text-base pb-4">
             Best Products Seller of the 2024 Year that buying for everybody.
           </p>
-          <a href="products.html"
+          <a href="products.php"
             ><button
               class="justify-center items-center btn border-white  bg-black text-white hover:bg-white hover:text-black hover:border-white w-48"
             >
@@ -648,6 +838,43 @@
       </div>
     </section>
     <my-footer> </my-footer>
-    <script src="./js/index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const pathName = window.location.pathname;
+  const pageName = pathName.split("/").pop();
+  if (pageName === "index.php" || "") {
+    const homeLink = document.getElementById("home");
+    if (homeLink) {
+      homeLink.classList.add("font-bold", "text-black");
+    }
+  }
+  if (pageName === "") {
+    const homeLink = document.getElementById("home");
+    if (homeLink) {
+      homeLink.classList.add("font-bold", "text-black");
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const pathName = window.location.pathname;
+  const pageName = pathName.split("/").pop();
+  if (pageName === "index.php") {
+    const homeLink = document.getElementById("home-nav");
+    if (homeLink) {
+      homeLink.classList.add("font-bold", "text-white", "bg-black");
+    }
+  }
+  if (pageName === "") {
+    const homeLink = document.getElementById("home-nav");
+    if (homeLink) {
+      homeLink.classList.add("font-bold", "text-white", "bg-black");
+    }
+  }
+});
+
+    </script>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/componets.js"></script>
   </body>
 </html>

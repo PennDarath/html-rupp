@@ -2,7 +2,7 @@ class NavBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
        <section
-      class="flex border-b justify-between min-w-screen z-50 py-4 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
+      class="flex border-b justify-between min-w-screen z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
     >
       <div class="flex items-center gap-x-10 justify-between w-full">
         <div class="flex items-center gap-x-1">
@@ -30,14 +30,14 @@ class NavBar extends HTMLElement {
           <nav>
             <ul class="flex gap-x-10">
               <li>
-                <a id="home" href="index.html" class="">Home</a>
+                <a id="home" href="./index.php" class="">Homee</a>
               </li>
               <li>
-                <a id="products" href="products.html" class=""
+                <a id="products" href="./products.php" class=""
                   >Product</a
                 >
               </li>
-              <a id="contact" href="contact.html" class=""
+              <a id="contact" href="./contact.php" class=""
                 >Contact Us</a
               >
               <li></li>
@@ -61,7 +61,7 @@ class NavBar extends HTMLElement {
               ></a>
             </li>
             <li>
-              <a href="/login/login.html"
+              <a href="login.php"
                 ><span class="text-black"
                   ><i
                     id="icon-fill"
@@ -114,13 +114,13 @@ class NavBar extends HTMLElement {
                 </label>
               </div>
               <li>
-                <a id="home-nav" href="index.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
+                <a id="home-nav" href="index.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
               </li>
               <li>
-                <a id="product-nav" href="products.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
+                <a id="product-nav" href="products.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
               </li>
               <li>
-                <a id="contact-nav" href="contact.html" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
+                <a id="contact-nav" href="contact.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
               </li>
             </ul>
           </div>
