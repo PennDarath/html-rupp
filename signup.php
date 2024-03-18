@@ -11,9 +11,17 @@ if(isset($_SESSION["user"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>Registeration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp7504297.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
+<body class="flex justify-center items-center h-screen bg-black-100 ">
+    <div class="bg-gray rounded-lg shadow-lg p-8 max-w-md w-full">
         <?php
         if(isset($_POST["submit"])) {
             $fullName = $_POST["fullname"];
@@ -64,24 +72,24 @@ if(isset($_SESSION["user"])) {
         }
         ?>
         <form action="signup.php" method="post">
-            <div class="form-group">
-                <input type="text" name="fullname" placeholder="Full Name">
+            
+            <div class="mb-4">
+                <input type="text" name="fullname" placeholder="Full Name" class="w-full px-3 py-2 border border-black-300 rounded-md focus:outline-none focus:border-red-500">
             </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Email">
+            <div class="mb-4">
+                <input type="email" name="email" placeholder="Email" class="w-full px-3 py-2 border border-black-300 rounded-md focus:outline-none focus:border-red-500">
             </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="Password">
+            <div class="mb-4">
+                <input type="password" name="password" placeholder="Password" class="w-full px-3 py-2 border border-black-300 rounded-md focus:outline-none focus:border-red-500">
             </div>
-            <div class="form-group">
-                <input type="password" name="repeat_password" placeholder="Repeat Password">
+            <div class="mb-4">
+                <input type="password" name="repeat_password" placeholder="Repeat Password" class="w-full px-3 py-2 border border-black-300 rounded-md focus:outline-none focus:border-red-500">
             </div>
-            <div class="form-group">
-                <input type="submit" name="submit" value="Register">
+            <div class="mb-4">
+                <input type="submit" name="submit" value="Register" class="w-full px-3 py-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-red-600 cursor-pointer">
             </div>
         </form>
-           <a href="login.php" class="btn btn-warning">go to login</a>
-
+        <a href="login.php" class="block text-center text-black-700 font-semibold hover:underline">Go to Login</a>
     </div>
 </body>
 </html>
