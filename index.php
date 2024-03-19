@@ -25,12 +25,7 @@ if(isset($_SESSION["user_id"])) {
     
     if ($row = $result->fetch_assoc()) {
         $avatar = $row["avatar"];
-    } else {
-        $avatar = "default_avatar.jpg";
-    }
-} else {
-    // Handle case when user_id is not set
-    $avatar = "default_avatar.jpg";
+    } 
 }
 ?>
 

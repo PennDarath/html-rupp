@@ -30,7 +30,7 @@ if (isset($_POST["login"])) {
             $_SESSION["user_email"] = $email;
             $_SESSION["username"] = $user['username'];
             $_SESSION["user_id"] = $user['user_id'];
-            header("Location: profile.php"); 
+            header("Location: index.php"); 
             exit;
         } else {
             echo "<div class='alert alert-danger'>Password does not match</div>";
