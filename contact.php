@@ -14,6 +14,17 @@
 
   <script src="js/componets.js"></script>
   <style>
+       #logo {
+  animation: rotateAnimation 1s linear infinite;
+}
+      @keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
     @media (max-width: 1250px) {
       #custom-grid-cols {
         visibility: hidden;

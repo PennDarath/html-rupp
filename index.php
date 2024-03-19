@@ -1,4 +1,39 @@
-<!--  -->
+<?php
+session_start();
+$con = mysqli_connect("localhost", "root", "", "rupp_ecommerce");
+
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
+
+// Check if user_id is set in session
+if(isset($_SESSION["user_id"])) {
+    $user_id = $_SESSION["user_id"];
+
+    $sql = "SELECT avatar FROM users WHERE user_id = ?";
+    $stmt = $con->prepare($sql);
+    
+    // Bind parameters
+    $stmt->bind_param("i", $user_id);
+    
+    // Execute query
+    $stmt->execute();
+    
+    // Get result
+    $result = $stmt->get_result();
+    
+    if ($row = $result->fetch_assoc()) {
+        $avatar = $row["avatar"];
+    } else {
+        $avatar = "default_avatar.jpg";
+    }
+} else {
+    // Handle case when user_id is not set
+    $avatar = "default_avatar.jpg";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -98,15 +133,10 @@
     >
       <div class="flex items-center gap-x-10 justify-between w-full">
         <div class="flex items-center gap-x-1">
-          <img
-            src="https://media.istockphoto.com/id/1162451364/vector/valknut-symbol-icon.jpg?s=612x612&w=0&k=20&c=h6Svj7Ddads1DVDf8wh_G2PJFhV4IJvO-ZSdpRDFrac="
-            alt="Logo"
-            width="40px"
-            height="40px"
-            id="logo"
-            class="border-none pb-3 rounded-full"
-          />
-          <p class="text-xl text-black font-medium">Korng Jak</p>
+
+                   
+
+          <p class="text-xl text-black font-medium">Korng Jakkk</p>
         </div>
         <div class="flex-1 max-sm:hidden relative">
           <input
@@ -154,13 +184,19 @@
             </li>
             <li>
               <a href="./login.php"
-                ><span class="text-black"
-                  ><i
-                    id="icon-fill"
-                    class="fa fa-user text-sm"
-                    aria-hidden="true"
-                  ></i></span
-              ></a>
+                >
+             <?php 
+if(isset($avatar)){
+    echo '<img class="h-5 w-5 rounded-full" src="img/' . $avatar . '" alt="Avatar">';
+} else {
+    echo '<span class="text-black">
+              <i id="icon-fill" class="fa fa-user text-sm" aria-hidden="true"></i>
+          </span>';
+}
+?>
+
+              
+                </a>
             </li>
           </div>
         </ul>
