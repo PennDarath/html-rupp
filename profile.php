@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
         // Validate image extension and size
         if (!in_array($imageExtension, $validImageExtension)) {
             echo "<script> alert('Invalid Image Extension'); </script>";
-        } else if ($fileSize > 10000000) {
+        } else if ($fileSize > 1000000) {
             echo "<script> alert('Image Size Is Too Large'); </script>";
         } else {
             $newImageName = uniqid() . '.' . $imageExtension;
