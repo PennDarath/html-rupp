@@ -106,7 +106,7 @@
             id="logo"
             class="border-none pb-3 rounded-full"
           />
-          <p class="text-xl text-black font-medium">Korng Jak</p>
+          <p class="text-xl text-black font-medium">Korng Jakkk</p>
         </div>
         <div class="flex-1 max-sm:hidden relative">
           <input
