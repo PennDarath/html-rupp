@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// Enable error reporting for debugging
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if(isset($_SESSION["user"])) {
     header("Location: profile.php");
-    exit; // Stop script execution after redirect
+    exit; 
 }
 
 if (isset($_POST["login"])) {
