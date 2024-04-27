@@ -155,20 +155,19 @@
 	            </div><!--//app-header-content-->
 	        </div><!--//container-fluid-->
         </div><!--//app-header-inner-->
-        <div id="app-sidepanel" class="app-sidepanel"> 
+        <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden"> 
 	        <div id="sidepanel-drop" class="sidepanel-drop"></div>
 	        <div class="sidepanel-inner d-flex flex-column">
 		        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 		        <div class="app-branding">
-		            <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
+		            <a class="app-logo" href="index.php"><img class="logo-icon me-2" src="assets/images/app-logo.svg" alt="logo"><span class="logo-text">PORTAL</span></a>
 	
 		        </div><!--//app-branding-->  
-		        
 			    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
 				    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link active" href="index.html">
+					        <a class="nav-link" href="index.php">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
@@ -178,10 +177,10 @@
 		                         <span class="nav-link-text">User</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
-					  
+					    
 					    <li class="nav-item">
 					        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-					        <a class="nav-link" href="orders.html">
+					        <a class="nav-link active" href="products.php">
 						        <span class="nav-icon">
 						        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
@@ -194,7 +193,7 @@
 		                         <span class="nav-link-text">Product</span>
 					        </a><!--//nav-link-->
 					    </li><!--//nav-item-->
-					  			    
+					 
 				    </ul><!--//app-menu-->
 			    </nav><!--//app-nav-->
 			    <div class="app-sidepanel-footer">
@@ -239,7 +238,6 @@
 					    </ul><!--//footer-menu-->
 				    </nav>
 			    </div><!--//app-sidepanel-footer-->
-		       
 	        </div><!--//sidepanel-inner-->
 	    </div><!--//app-sidepanel-->
     </header><!--//app-header-->
@@ -251,7 +249,7 @@
 			    
 			    <div class="row g-3 mb-4 align-items-center justify-content-between">
 				    <div class="col-auto">
-			            <h1 class="app-page-title mb-0">Users</h1>
+			            <h1 class="app-page-title mb-0">Products</h1>
 				    </div>
 				    <div class="col-auto">
 					     <div class="page-utilities">
@@ -292,7 +290,12 @@
 			    </div><!--//row-->
 			   
 			    
-			
+			    <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
+				    <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
+				    <a class="flex-sm-fill text-sm-center nav-link"  id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">Paid</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">Pending</a>
+				    <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">Cancelled</a>
+				</nav>
 				
 				
 				<div class="tab-content" id="orders-table-tab-content">
@@ -303,12 +306,12 @@
 							        <table class="table app-table-hover mb-0 text-left">
 										<thead>
 											<tr>
-												<th class="cell">User ID</th>
-												<th class="cell">Username</th>
-												<th class="cell">Email</th>
-												<th class="cell">Avatar</th>
-												<th class="cell">Edit</th>
-												<th class="cell">Delete</th>
+												<th class="cell">Order</th>
+												<th class="cell">Product</th>
+												<th class="cell">Customer</th>
+												<th class="cell">Date</th>
+												<th class="cell">Status</th>
+												<th class="cell">Total</th>
 												<th class="cell"></th>
 											</tr>
 										</thead>
@@ -540,16 +543,13 @@
 		    </div>
 	    </footer><!--//app-footer-->
 	    
-    </div><!--//app-wrapper-->    				
+    </div><!--//app-wrapper-->    					
 
  
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-
-    <!-- Charts JS -->
-    <script src="assets/plugins/chart.js/chart.min.js"></script> 
-    <script src="assets/js/index-charts.js"></script> 
+    
     
     <!-- Page Specific JS -->
     <script src="assets/js/app.js"></script> 
