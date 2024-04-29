@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 $user_id = $_SESSION["user_id"];
 
 
+
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
 
@@ -33,7 +34,7 @@ if (isset($_POST["submit"])) {
         // Validate image extension and size
         if (!in_array($imageExtension, $validImageExtension)) {
             echo "<script> alert('Invalid Image Extension'); </script>";
-        } else if ($fileSize > 1000000) {
+        } else if ($fileSize > 10000000) {
             echo "<script> alert('Image Size Is Too Large'); </script>";
         } else {
             $newImageName = uniqid() . '.' . $imageExtension;
@@ -183,14 +184,14 @@ if ($row = $result->fetch_assoc()) {
     text-decoration: none; 
 }
 
-.btn-dark:hover {
-    background-color: #333;
-}
 
     </style>
 </head>
 
 <body>
+      <div class="w-20 mt-2">
+                <a href="index.php" class="border px-2 py-1 bg-black text-white rounded-lg m-2 ">Back</a>
+            </div>
     <div class="background-image">
         <div class="profile-container">
             <div class="profile-picture">
@@ -201,6 +202,11 @@ if ($row = $result->fetch_assoc()) {
                 <?php
                 if (isset($_SESSION["user_email"])) {
                     echo "<h2>Email: " . $_SESSION["user_email"] . "</h2>";
+                }
+                ?>
+                <?php
+                if (isset($_SESSION["user_username"])) {
+                    echo "<h2>Username: " . $_SESSION["username"] . "</h2>";
                 }
                 ?>
             </div>

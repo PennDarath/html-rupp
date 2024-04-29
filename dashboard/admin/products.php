@@ -7,7 +7,15 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
     }
-    
+	   if (isset($_GET['delete_product']) && is_numeric($_GET['delete_product'])) {
+        $delete_product_id = $_GET['delete_product'];
+        $delete_query = "DELETE FROM products WHERE product_id = $delete_product_id";
+        if (mysqli_query($con, $delete_query)) {
+            echo "Order deleted successfully.";
+        } else {
+            echo "Error deleting order: " . mysqli_error($con);
+        }
+    }
     // Fetch products from the database
     $query = "SELECT * FROM products";
     $result = mysqli_query($con, $query);
@@ -25,8 +33,8 @@
             $tableRows .= '<td class="cell">' . $row['quantity'] . '</td>';
             $tableRows .= '<td class="cell">' . $row['phone_storage'] . '</td>';
             $tableRows .= '<td class="cell">' . $row['product_price'] . '</td>';
-			$tableRows .= '<td class="cell"><a class="btn-sm app-btn-primary" href="update_product.php?id=' . $row['product_id'] . '">Edit</a></td>';
-			$tableRows .= '<td class="cell"><a class="btn-sm app-btn-danger" href="delete_product.php?id=' . $row['product_id'] . '">Delete</a></td>'; // Added delete button with product id in the href attribute
+						   $tableRows .= '<td class="cell"><a href="?delete_product=' . $row['product_id'] . '" onclick="return confirm(\'Are you sure you want to delete this product?\')">Delete</a></td>';
+
 			
 
             $tableRows .= '</tr>';
@@ -276,7 +284,7 @@
 									</select>
 							    </div>
 							    <div class="col-auto">						    
-								    <a class="btn app-btn-secondary" href="add_product.html">
+								    <a class="btn app-btn-secondary" href="add_product.php">
 									    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download me-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
 		  <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
