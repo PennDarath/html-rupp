@@ -14,11 +14,11 @@ if ($conn->connect_error) {
 
 $user_id = $_SESSION["user_id"];
 
-// Check if form is submitted
+
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
 
-    // Check if an image is uploaded
+    
     if ($_FILES["image"]["error"] == 4) {
         echo "<script> alert('Image Does Not Exist'); </script>";
     } else {
@@ -57,7 +57,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-// Fetch user's avatar from the database
+
 $sql = "SELECT avatar FROM users WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
@@ -101,6 +101,7 @@ if ($row = $result->fetch_assoc()) {
             border: 1px solid #ccc;
             border-radius: 20px;
             background-color: #f2f2f2;
+            text-align: center; 
         }
 
         .profile-picture {
@@ -108,7 +109,7 @@ if ($row = $result->fetch_assoc()) {
             height: 250px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto;
+            margin: 0 auto 20px; 
         }
 
         .profile-picture img {
@@ -118,41 +119,70 @@ if ($row = $result->fetch_assoc()) {
         }
 
         .profile-details {
-            text-align: center;
+            margin-top: 20px; 
+        }
 
-            margin-top: 30px;
+        .profile-form {
+            margin-top: 20px; 
+        }
+
+        .profile-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .profile-form input[type="file"] {
+            display: block;
+            margin-bottom: 10px;
+            margin: 0 auto; 
+        }
+
+        .profile-form button {
+            display: block; 
+            width: 100%; 
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .profile-details .btn-dark {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <div class="background-image">
-          <form class="" action="" method="post" autocomplete="off" enctype="multipart/form-data">
-        <label for="image">Image : </label>
-        <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value=""> <br> <br>
-        <button type="submit" name="submit">Submit</button>
-    </form>
-        <div class="card_background_img">
-            <div class="profile-container">
-                <div class="profile-picture">
-                    <img src="img/<?php echo $avatar; ?>" alt="Avatar">
-                </div>
-
-                <div class="profile-details">
-                    <h2>User Profile</h2>
-                    <?php
-                    if (isset($_SESSION["user_email"])) {
-                        echo "<h2>Email: " . $_SESSION["user_email"] . "</h2>";
-                    }
-                    ?>
-                    <a href="logout.php" class="btn btn-dark">Logout</a>
-
-                </div>
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img src="img/<?php echo $avatar; ?>" alt="Avatar">
             </div>
+            <div class="profile-details">
+                <h2>User Profile</h2>
+                <?php
+                if (isset($_SESSION["user_email"])) {
+                    echo "<h2>Email: " . $_SESSION["user_email"] . "</h2>";
+                }
+                ?>
+                <a href="logout.php" class="btn-dark">Logout</a>
+            </div>
+            <form class="profile-form" action="" method="post" autocomplete="off" enctype="multipart/form-data">
+                <label for="image">Choose an image :</label>
+                <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value=""> <br>
+                <button type="submit" name="submit">Submit</button>
+            </form>
         </div>
     </div>
-  
 </body>
 
 </html>
-
