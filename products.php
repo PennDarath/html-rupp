@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-$sql = "SELECT product_name, product_price, product_id FROM products";
+$sql = "SELECT product_name, product_price, product_id, product_image FROM products";
 $result = mysqli_query($con, $sql);
 
 
@@ -514,24 +514,27 @@ if (!$result) {
             if (Array.isArray(products) && products.length > 0 && container) {
               container.innerHTML = "";
               const products = <?php echo json_encode($products); ?>;
-
               products.forEach(product => {
-                const productHTML = `
-             <a href="productdetail.php?id=${product.product_id}">
-            <div class="card w-64 h-[420px] bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
-              <div class="card-body w-full items-center justify-end text-center text-black">
-                <p class="w-full h-12">${product.product_name}</p>
-                <p class="card-title">$${product.product_price}</p>
-                <div class="card-actions w-full justify-center pt-1 hover:bg-white">
-                  <button class="btn hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
-                </div>
-              </div>
-              <div class="absolute right-3 top-2 hover:cursor-pointer">
-                <i id="icon-fill-product" class="justify-center items-end grid fa fa-heart text-2xl" aria-hidden="true"></i>
-              </div>
-            </div>
-          </a>
-        `;
+           const productHTML = `
+  <a href="productdetail.php?id=${product.product_id}">
+    <div class="card w-64 h-[420px]  bg-gray-100 shadow-sm relative hover:scale-95 duration-300 group">
+      <figure class="px-10 pt-10 ">
+        <img src="img/${product.product_image}" alt="Product Image" class="rounded-xl object-fill w-fit h-fit">
+      </figure>
+      <div class="card-body w-full items-center justify-end text-center text-black  ">
+        <p id="text-card" class="w-full h-12">${product.product_name}</p>
+        <p class="card-title">${product.product_price}</p>
+        <div class="card-actions w-full justify-center pt-1 hover:bg-white">
+          <button class="btn  hover:bg-black bg-black w-[90%] border text-white">Buy Now</button>
+        </div>
+      </div>
+      <div class="absolute right-3 top-2 hover:cursor-pointer">
+        <i id="icon-fill-product" class="justify-center  items-end grid fa fa-heart text-2xl" aria-hidden="true"></i>
+      </div>
+    </div>
+  </a>
+`;
+
                 container.innerHTML += productHTML;
               });
             } else {
