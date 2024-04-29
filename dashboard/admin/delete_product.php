@@ -10,26 +10,26 @@ if (mysqli_connect_errno()) {
 
 // Check if the product ID is provided in the URL
 if (isset($_GET['id'])) {
-    $userId = $_GET['id'];
+    $productId = $_GET['id'];
 
     // Delete the product from the database
-    $query = "DELETE FROM users WHERE user_id = $userId";
+    $query = "DELETE FROM products WHERE product_id = $productId";
     $result = mysqli_query($con, $query);
 
     if ($result) {
         // Set success message
-        $_SESSION['success_message'] = "User deleted successfully";
+        $_SESSION['success_message'] = "Product deleted successfully";
     } else {
-        $_SESSION['error_message'] = "Error deleting user: " . mysqli_error($con);
+        $_SESSION['error_message'] = "Error deleting product: " . mysqli_error($con);
     }
 } else {
-    $_SESSION['error_message'] = "User ID not provided";
+    $_SESSION['error_message'] = "Product ID not provided";
 }
 
 // Close database connection
 mysqli_close($con);
 
 // Redirect back to the dashboard
-header("Location: index.php");
+header("Location: products.php");
 exit();
 ?>
