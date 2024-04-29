@@ -1,3 +1,34 @@
+<?php
+session_start();
+$con = mysqli_connect("localhost", "root", "", "rupp_ecommerce");
+
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
+
+// Check if user_id is set in session
+if(isset($_SESSION["user_id"])) {
+    $user_id = $_SESSION["user_id"];
+
+    $sql = "SELECT avatar FROM users WHERE user_id = ?";
+    $stmt = $con->prepare($sql);
+    
+    // Bind parameters
+    $stmt->bind_param("i", $user_id);
+    
+    // Execute query
+    $stmt->execute();
+    
+    // Get result
+    $result = $stmt->get_result();
+    
+    if ($row = $result->fetch_assoc()) {
+        $avatar = $row["avatar"];
+    } 
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,10 +180,12 @@
 </head>
 
 <body class="min-h-screen bg-white">
-  <section class="flex border-b justify-between min-w-screen py-4 z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white">
+   <section class="flex border-b justify-between min-w-screen py-4 z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white">
     <div class="flex items-center gap-x-10 justify-between w-full">
       <div class="flex items-center gap-x-1">
-        <img src="https://media.istockphoto.com/id/1162451364/vector/valknut-symbol-icon.jpg?s=612x612&w=0&k=20&c=h6Svj7Ddads1DVDf8wh_G2PJFhV4IJvO-ZSdpRDFrac=" alt="Logo" width="40px" height="40px" id="logo" class="border-none pb-3 rounded-full" />
+
+
+        <img src="https://media.istockphoto.com/id/1162451364/vector/valknut-symbol-icon.jpg?s=612x612&w=0&k=20&c=h6Svj7Ddads1DVDf8wh_G2PJFhV4IJvO-ZSdpRDFrac=" alt="Logo" width="40px" height="40px" id="logo" class="border-none pb-3 rounded-full">
         <p class="text-xl text-black font-medium">Korng Jak</p>
       </div>
       <div class="flex-1 max-sm:hidden relative">
@@ -175,13 +208,34 @@
         </nav>
         <div class="flex items-center gap-x-5">
           <li>
-            <a href="#"><span class="text-black fill"><i id="icon-fill-product" class="fa fa-heart text-sm"></i></span></a>
+            <a href="#"><span class="text-black fill"><i id="icon-fill" class="fa fa-heart text-sm"></i></span></a>
           </li>
-          <li>
-            <a href="#"><span class="text-black"><i id="icon-fill-product" class="fa fa-shopping-cart text-sm" aria-hidden="true"></i></span></a>
+          <li class="relative">
+            <a href="#">
+              <span class="text-black">
+                <i id="icon-fill" class="fa fa-shopping-cart text-sm" aria-hidden="true"></i>
+              </span>
+
+
+              <span id="cart-item-count" class="text-[10px] flex items-center justify-center h-5 w-5 rounded-full  absolute -top-3 left-1 p-0.5 "></span>
+
+            </a>
           </li>
+
           <li>
-            <a href="./login.php"><span class="text-black"><i id="icon-fill-product" class="fa fa-user text-sm" aria-hidden="true"></i></span></a>
+            <a href="./login.php">
+              <?php
+              if (isset($avatar)) {
+                echo '<img class="h-5 w-5 rounded-full" src="img/' . $avatar . '" alt="Avatar">';
+              } else {
+                echo '<span class="text-black">
+              <i id="icon-fill" class="fa fa-user text-sm" aria-hidden="true"></i>
+          </span>';
+              }
+              ?>
+
+
+            </a>
           </li>
         </div>
       </ul>

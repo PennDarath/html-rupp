@@ -124,133 +124,108 @@ if(isset($_SESSION["user_id"])) {
 
   <body class="min-h-screen bg-white w-screen scroll-smooth">
 <!-- <my-navbar></my-navbar> -->
-    <section
-      class="flex border-b justify-between min-w-screen py-4 z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white"
-    >
-      <div class="flex items-center gap-x-10 justify-between w-full">
-        <div class="flex items-center gap-x-1">
+    <section class="flex border-b justify-between min-w-screen py-4 z-50  2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5 sticky top-0 bg-white">
+    <div class="flex items-center gap-x-10 justify-between w-full">
+      <div class="flex items-center gap-x-1">
 
-                   
 
-          <p class="text-xl text-black font-medium">Korng Jakkk</p>
-        </div>
-        <div class="flex-1 max-sm:hidden relative">
-          <input
-            placeholder="Search"
-            class="input w-full pl-11 h-11 text-sm bg-gray-100 text-black"
-          />
+        <img src="https://media.istockphoto.com/id/1162451364/vector/valknut-symbol-icon.jpg?s=612x612&w=0&k=20&c=h6Svj7Ddads1DVDf8wh_G2PJFhV4IJvO-ZSdpRDFrac=" alt="Logo" width="40px" height="40px" id="logo" class="border-none pb-3 rounded-full">
+        <p class="text-xl text-black font-medium">Korng Jak</p>
+      </div>
+      <div class="flex-1 max-sm:hidden relative">
+        <input placeholder="Search" class="input w-full pl-11 h-11 text-sm bg-gray-100 text-black" />
 
-          <span class="text-gray-400 absolute top-3 left-5 text-sm"
-            ><i class="fa fa-search"></i
-          ></span>
-        </div>
-        <ul class="flex items-center gap-x-1 max-lg:hidden">
-          <nav>
-            <ul class="flex gap-x-10">
-              <li>
-                <a id="home" href="index.php" class="text-sm">Home</a>
-              </li>
-              <li>
-                <a id="products" href="products.php" class="text-sm"
-                  >Product</a
-                >
-              </li>
-              <a id="contact" href="contact.php" class="text-sm"
-                >Contact Us</a
-              >
-              <li></li>
-            </ul>
-          </nav>
-          <div class="flex items-center gap-x-5">
+        <span class="text-gray-400 absolute top-3 left-5 text-sm"><i class="fa fa-search"></i></span>
+      </div>
+      <ul class="flex items-center gap-x-1 max-lg:hidden">
+        <nav>
+          <ul class="flex gap-x-10">
             <li>
-              <a href="#"
-                ><span class="text-black fill"
-                  ><i id="icon-fill" class="fa fa-heart text-sm"></i></span
-              ></a>
+              <a id="home" href="index.php" class="text-sm">Home</a>
             </li>
             <li>
-              <a href="#"
-                ><span class="text-black"
-                  ><i
-                    id="icon-fill"
-                    class="fa fa-shopping-cart text-sm"
-                    aria-hidden="true"
-                  ></i></span
-              ></a>
+              <a id="products" href="products.php" class="text-sm">Product</a>
             </li>
-            <li>
-              <a href="./login.php"
-                >
-             <?php 
-if(isset($avatar)){
-    echo '<img class="h-5 w-5 rounded-full" src="img/' . $avatar . '" alt="Avatar">';
-} else {
-    echo '<span class="text-black">
+            <a id="contact" href="contact.php" class="text-sm">Contact Us</a>
+            <li></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-x-5">
+          <li>
+            <a href="#"><span class="text-black fill"><i id="icon-fill" class="fa fa-heart text-sm"></i></span></a>
+          </li>
+          <li class="relative">
+            <a href="#">
+              <span class="text-black">
+                <i id="icon-fill" class="fa fa-shopping-cart text-sm" aria-hidden="true"></i>
+              </span>
+
+
+              <span id="cart-item-count" class="text-[10px] flex items-center justify-center h-5 w-5 rounded-full  absolute -top-3 left-1 p-0.5 "></span>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="./login.php">
+              <?php
+              if (isset($avatar)) {
+                echo '<img class="h-5 w-5 rounded-full" src="img/' . $avatar . '" alt="Avatar">';
+              } else {
+                echo '<span class="text-black">
               <i id="icon-fill" class="fa fa-user text-sm" aria-hidden="true"></i>
           </span>';
-}
-?>
+              }
+              ?>
 
-              
-                </a>
-            </li>
-          </div>
-        </ul>
-        <div class="drawer z-50 lg:hidden w-fit flex justify-end">
-          <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-          <div class="drawer-content flex flex-col">
-            <div class="w-full">
-              <div class="lg:hidden">
-                <label for="my-drawer-3" class="btn btn-square btn-ghost">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    class="inline-block w-6 h-6 stroke-current"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>
-                </label>
-              </div>
+
+            </a>
+          </li>
+        </div>
+      </ul>
+      <div class="drawer z-50 lg:hidden w-fit flex justify-end">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <div class="w-full">
+            <div class="lg:hidden">
+              <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </label>
             </div>
           </div>
-          <div class="drawer-side">
-            <label for="my-drawer-3" class="drawer-overlay"></label>
-            <ul class="menu p-4 w-80 h-full bg-white">
-              <div class="flex items-center justify-between pb-5">
-                <div class="flex">
-                  <div></div>
-                  <p
-                    class="font-serif text-xl text-black font-bold cursor-default"
-                  >
-                    KorngJak
-                  </p>
-                </div>
-                <label for="my-drawer-3" class="drawer-overlay">
-                  <div class="cursor-pointer rounded-sm p-0.5 text-black">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                  </div>
-                </label>
+        </div>
+        <div class="drawer-side">
+          <label for="my-drawer-3" class="drawer-overlay"></label>
+          <ul class="menu p-4 w-80 h-full bg-white">
+            <div class="flex items-center justify-between pb-5">
+              <div class="flex">
+                <div></div>
+                <p class="font-serif text-xl text-black font-bold cursor-default">
+                  KorngJak
+                </p>
               </div>
-              <li>
-                <a id="home-nav" href="index.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
-              </li>
-              <li>
-                <a id="product-nav" href="products.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
-              </li>
-              <li>
-                <a id="contact-nav" href="contact.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
-              </li>
-            </ul>
-          </div>
+              <label for="my-drawer-3" class="drawer-overlay">
+                <div class="cursor-pointer rounded-sm p-0.5 text-black">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+              </label>
+            </div>
+            <li>
+              <a id="home-nav" href="index.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Home</a>
+            </li>
+            <li>
+              <a id="product-nav" href="products.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Products</a>
+            </li>
+            <li>
+              <a id="contact-nav" href="contact.php" class="text-black mb-1 font-semibold hover:bg-black hover:text-white">Contact Us</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
     <section
       id="content"
       class="bg-[#0F0F0F] 2xl:px-32 xl:px-28 lg:px-20 md:px-12 sm:px-5 px-5"
@@ -904,6 +879,94 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
+    function toggleCartDrawer() {
+      const cartDrawer = document.getElementById('cart-drawer');
+      cartDrawer.classList.toggle('hidden');
+    }
+
+    function closeCartDrawer() {
+      const cartDrawer = document.getElementById('cart-drawer');
+      cartDrawer.classList.add('hidden');
+    }
+
+    const cartIcon = document.querySelector('.fa.fa-shopping-cart');
+    cartIcon.addEventListener('click', toggleCartDrawer);
+
+    const closeButton = document.getElementById('close-cart-drawer');
+    closeButton.addEventListener('click', closeCartDrawer);
+
+    function addToCart(productId) {
+      updateCartIcon();
+
+      const quantityElement = document.querySelector('.add span:nth-child(2)');
+      const quantity = parseInt(quantityElement.textContent);
+
+      const product = {
+        id: productId,
+        name: '<?php echo $product['product_name']; ?>',
+        price: '<?php echo $product['product_price']; ?>',
+        image: '<?php echo $product['product_image']; ?>',
+        color: '<?php echo $product['color']; ?>',
+        phone_storage: '<?php echo $product['phone_storage']; ?>',
+        quantity: quantity
+      };
+
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const existingIndex = cartItems.findIndex(item => item.id === product.id);
+      if (existingIndex !== -1) {
+        cartItems[existingIndex].quantity += quantity;
+      } else {
+        cartItems.push(product);
+      }
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      updateCartDrawer();
+    }
+
+
+    function deleteCartItem(name) {
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const index = cartItems.findIndex(item => item.name === name);
+      if (index !== -1) {
+        cartItems.splice(index, 1);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartDrawer();
+      }
+    }
+
+    function updateCartDrawer() {
+      updateCartIcon();
+
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const cartList = document.getElementById('cart-items');
+      cartList.innerHTML = '';
+
+      cartItems.forEach((item, index) => {
+        const li = document.createElement('li');
+        const details = document.createElement('p');
+
+        details.textContent = `
+            Product ID: ${item.id}, 
+            Name: ${item.name}, 
+            Color: ${item.color}, 
+            Phone Storage: ${item.phone_storage}, 
+            Quantity: ${item.quantity}
+        `;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+          deleteCartItem(item.name)
+        });
+        li.appendChild(details);
+        li.appendChild(deleteButton);
+
+        cartList.appendChild(li);
+      });
+    }
+
+
+    updateCartDrawer();
 
     </script>
      <script src="https://cdn.tailwindcss.com"></script>
