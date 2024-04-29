@@ -1,51 +1,16 @@
-<?php
-    session_start();
-    $con = mysqli_connect("localhost", "root", "", "rupp_ecommerce");
-    
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-    }
-    
-    // Fetch products from the database
-    $query = "SELECT * FROM products";
-    $result = mysqli_query($con, $query);
-    
-    // Check if query was successful
-    if ($result) {
-        // Start building the table rows
-        $tableRows = '';
-        while ($row = mysqli_fetch_assoc($result)) {
-            // Populate table rows with product data
-            $tableRows .= '<tr>';
-            $tableRows .= '<td class="cell">' . $row['product_id'] . '</td>';
-            $tableRows .= '<td class="cell">' . $row['product_name'] . '</td>';
-            $tableRows .= '<td class="cell">' . $row['color'] . '</td>';
-            $tableRows .= '<td class="cell">' . $row['quantity'] . '</td>';
-            $tableRows .= '<td class="cell">' . $row['phone_storage'] . '</td>';
-            $tableRows .= '<td class="cell">' . $row['product_price'] . '</td>';
-			$tableRows .= '<td class="cell"><a class="btn-sm app-btn-primary" href="update_product.php?id=' . $row['product_id'] . '">Edit</a></td>';
-			$tableRows .= '<td class="cell"><a class="btn-sm app-btn-danger" href="delete_product.php?id=' . $row['product_id'] . '">Delete</a></td>'; // Added delete button with product id in the href attribute
-			
-
-            $tableRows .= '</tr>';
-        }
-    } else {
-        echo "Error: " . mysqli_error($con);
-    }
-    // Close database connection
-    mysqli_close($con);
-?>
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Korng Jak</title>
+    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -85,7 +50,7 @@
   <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
   <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
 </svg>
-					            <!-- <span class="icon-badge">3</span> -->
+					            <span class="icon-badge">3</span>
 					        </a><!--//dropdown-toggle-->
 					        
 					        <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
@@ -93,7 +58,20 @@
 						            <h5 class="dropdown-menu-title mb-0">Notifications</h5>
 						        </div><!--//dropdown-menu-title-->
 						        <div class="dropdown-menu-content">
-
+							       <div class="item p-3">
+								        <div class="row gx-2 justify-content-between align-items-center">
+									        <div class="col-auto">
+										       <img class="profile-image" src="assets/images/profiles/profile-1.png" alt="">
+									        </div><!--//col-->
+									        <div class="col">
+										        <div class="info"> 
+											        <div class="desc">Amy shared a file with you. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+											        <div class="meta"> 2 hrs ago</div>
+										        </div>
+									        </div><!--//col--> 
+								        </div><!--//row-->
+								        <a class="link-mask" href="notifications.html"></a>
+							       </div><!--//item-->
 							       <div class="item p-3">
 								        <div class="row gx-2 justify-content-between align-items-center">
 									        <div class="col-auto">
@@ -113,10 +91,44 @@
 								        </div><!--//row-->
 								        <a class="link-mask" href="notifications.html"></a>
 							       </div><!--//item-->
+							       <div class="item p-3">
+								        <div class="row gx-2 justify-content-between align-items-center">
+									        <div class="col-auto">
+										        <div class="app-icon-holder icon-holder-mono">
+											        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+</svg>
+										        </div>
+									        </div><!--//col-->
+									        <div class="col">
+										        <div class="info"> 
+											        <div class="desc">Your report is ready. Proin venenatis interdum est.</div>
+											        <div class="meta"> 3 days ago</div>
+										        </div>
+									        </div><!--//col-->
+								        </div><!--//row-->
+								        <a class="link-mask" href="notifications.html"></a>
+							       </div><!--//item-->
+							       <div class="item p-3">
+								        <div class="row gx-2 justify-content-between align-items-center">
+									        <div class="col-auto">
+										       <img class="profile-image" src="assets/images/profiles/profile-2.png" alt="">
+									        </div><!--//col-->
+									        <div class="col">
+										        <div class="info"> 
+											        <div class="desc">James sent you a new message.</div>
+											        <div class="meta"> 7 days ago</div>
+										        </div>
+									        </div><!--//col--> 
+								        </div><!--//row-->
+								        <a class="link-mask" href="notifications.html"></a>
+							       </div><!--//item-->
 						        </div><!--//dropdown-menu-content-->
+						        
 						        <div class="dropdown-menu-footer p-2 text-center">
 							        <a href="notifications.html">View all</a>
-						        </div>			
+						        </div>
+															
 							</div><!--//dropdown-menu-->					        
 				        </div><!--//app-utility-item-->
 			            <div class="app-utility-item">
@@ -132,10 +144,10 @@
 			            <div class="app-utility-item app-user-dropdown dropdown">
 				            <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="assets/images/user.png" alt="user profile"></a>
 				            <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-								<li><a class="dropdown-item" href="account.php">Account</a></li>
+								<li><a class="dropdown-item" href="account.html">Account</a></li>
 								<li><a class="dropdown-item" href="settings.html">Settings</a></li>
 								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="login.php">Log Out</a></li>
+								<li><a class="dropdown-item" href="login.html">Log Out</a></li>
 							</ul>
 			            </div><!--//app-user-dropdown--> 
 		            </div><!--//app-utilities-->
@@ -249,7 +261,7 @@
 			    
 			    <div class="row g-3 mb-4 align-items-center justify-content-between">
 				    <div class="col-auto">
-			            <h1 class="app-page-title mb-0">Products</h1>
+			            <h1 class="app-page-title mb-0">Orders</h1>
 				    </div>
 				    <div class="col-auto">
 					     <div class="page-utilities">
@@ -276,12 +288,12 @@
 									</select>
 							    </div>
 							    <div class="col-auto">						    
-								    <a class="btn app-btn-secondary" href="add_product.html">
+								    <a class="btn app-btn-secondary" href="#">
 									    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download me-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		  <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
 		  <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
 		</svg>
-									    Add Product
+									    Download CSV
 									</a>
 							    </div>
 						    </div><!--//row-->
@@ -306,27 +318,243 @@
 							        <table class="table app-table-hover mb-0 text-left">
 										<thead>
 											<tr>
-												<th class="cell">ID</th>
-												<th class="cell">Product-Name</th>
-												<th class="cell">Color</th>
-												<th class="cell">Quantity</th>
-												<th class="cell">Phone Storage</th>
-												<th class="cell">Price</th>
+												<th class="cell">Order</th>
+												<th class="cell">Product</th>
+												<th class="cell">Customer</th>
+												<th class="cell">Date</th>
+												<th class="cell">Status</th>
+												<th class="cell">Total</th>
 												<th class="cell"></th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php echo $tableRows; ?>
+											<tr>
+												<td class="cell">#15346</td>
+												<td class="cell"><span class="truncate">Lorem ipsum dolor sit amet eget volutpat erat</span></td>
+												<td class="cell">John Sanders</td>
+												<td class="cell"><span>17 Oct</span><span class="note">2:16 PM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$259.35</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											<tr>
+												<td class="cell">#15345</td>
+												<td class="cell"><span class="truncate">Consectetur adipiscing elit</span></td>
+												<td class="cell">Dylan Ambrose</td>
+												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">03:16 AM</span></td>
+												<td class="cell"><span class="badge bg-warning">Pending</span></td>
+												<td class="cell">$96.20</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											<tr>
+												<td class="cell">#15344</td>
+												<td class="cell"><span class="truncate">Pellentesque diam imperdiet</span></td>
+												<td class="cell">Teresa Holland</td>
+												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">01:16 AM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$123.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+											<tr>
+												<td class="cell">#15343</td>
+												<td class="cell"><span class="truncate">Vestibulum a accumsan lectus sed mollis ipsum</span></td>
+												<td class="cell">Jayden Massey</td>
+												<td class="cell"><span class="cell-data">15 Oct</span><span class="note">8:07 PM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$199.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+											<tr>
+												<td class="cell">#15342</td>
+												<td class="cell"><span class="truncate">Justo feugiat neque</span></td>
+												<td class="cell">Reina Brooks</td>
+												<td class="cell"><span class="cell-data">12 Oct</span><span class="note">04:23 PM</span></td>
+												<td class="cell"><span class="badge bg-danger">Cancelled</span></td>
+												<td class="cell">$59.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+											<tr>
+												<td class="cell">#15341</td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et sollicitudin</span></td>
+												<td class="cell">Raymond Atkins</td>
+												<td class="cell"><span class="cell-data">11 Oct</span><span class="note">11:18 AM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+		
 										</tbody>
 									</table>
 						        </div><!--//table-responsive-->
 						       
 						    </div><!--//app-card-body-->		
 						</div><!--//app-card-->
-			        </div>
-				</div><!--//tab-content-->    
+						<nav class="app-pagination">
+							<ul class="pagination justify-content-center">
+								<li class="page-item disabled">
+									<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+							    </li>
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+								    <a class="page-link" href="#">Next</a>
+								</li>
+							</ul>
+						</nav><!--//app-pagination-->
+						
+			        </div><!--//tab-pane-->
+			        
+			        <div class="tab-pane fade" id="orders-paid" role="tabpanel" aria-labelledby="orders-paid-tab">
+					    <div class="app-card app-card-orders-table mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+								    
+							        <table class="table mb-0 text-left">
+										<thead>
+											<tr>
+												<th class="cell">Order</th>
+												<th class="cell">Product</th>
+												<th class="cell">Customer</th>
+												<th class="cell">Date</th>
+												<th class="cell">Status</th>
+												<th class="cell">Total</th>
+												<th class="cell"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="cell">#15346</td>
+												<td class="cell"><span class="truncate">Lorem ipsum dolor sit amet eget volutpat erat</span></td>
+												<td class="cell">John Sanders</td>
+												<td class="cell"><span>17 Oct</span><span class="note">2:16 PM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$259.35</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+											<tr>
+												<td class="cell">#15344</td>
+												<td class="cell"><span class="truncate">Pellentesque diam imperdiet</span></td>
+												<td class="cell">Teresa Holland</td>
+												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">01:16 AM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$123.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+											<tr>
+												<td class="cell">#15343</td>
+												<td class="cell"><span class="truncate">Vestibulum a accumsan lectus sed mollis ipsum</span></td>
+												<td class="cell">Jayden Massey</td>
+												<td class="cell"><span class="cell-data">15 Oct</span><span class="note">8:07 PM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$199.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+										
+											
+											<tr>
+												<td class="cell">#15341</td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et sollicitudin</span></td>
+												<td class="cell">Raymond Atkins</td>
+												<td class="cell"><span class="cell-data">11 Oct</span><span class="note">11:18 AM</span></td>
+												<td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+		
+										</tbody>
+									</table>
+						        </div><!--//table-responsive-->
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+			        </div><!--//tab-pane-->
+			        
+			        <div class="tab-pane fade" id="orders-pending" role="tabpanel" aria-labelledby="orders-pending-tab">
+					    <div class="app-card app-card-orders-table mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        <table class="table mb-0 text-left">
+										<thead>
+											<tr>
+												<th class="cell">Order</th>
+												<th class="cell">Product</th>
+												<th class="cell">Customer</th>
+												<th class="cell">Date</th>
+												<th class="cell">Status</th>
+												<th class="cell">Total</th>
+												<th class="cell"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="cell">#15345</td>
+												<td class="cell"><span class="truncate">Consectetur adipiscing elit</span></td>
+												<td class="cell">Dylan Ambrose</td>
+												<td class="cell"><span class="cell-data">16 Oct</span><span class="note">03:16 AM</span></td>
+												<td class="cell"><span class="badge bg-warning">Pending</span></td>
+												<td class="cell">$96.20</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+										</tbody>
+									</table>
+						        </div><!--//table-responsive-->
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+			        </div><!--//tab-pane-->
+			        <div class="tab-pane fade" id="orders-cancelled" role="tabpanel" aria-labelledby="orders-cancelled-tab">
+					    <div class="app-card app-card-orders-table mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        <table class="table mb-0 text-left">
+										<thead>
+											<tr>
+												<th class="cell">Order</th>
+												<th class="cell">Product</th>
+												<th class="cell">Customer</th>
+												<th class="cell">Date</th>
+												<th class="cell">Status</th>
+												<th class="cell">Total</th>
+												<th class="cell"></th>
+											</tr>
+										</thead>
+										<tbody>
+											
+											<tr>
+												<td class="cell">#15342</td>
+												<td class="cell"><span class="truncate">Justo feugiat neque</span></td>
+												<td class="cell">Reina Brooks</td>
+												<td class="cell"><span class="cell-data">12 Oct</span><span class="note">04:23 PM</span></td>
+												<td class="cell"><span class="badge bg-danger">Cancelled</span></td>
+												<td class="cell">$59.00</td>
+												<td class="cell"><a class="btn-sm app-btn-secondary" href="#">View</a></td>
+											</tr>
+											
+										</tbody>
+									</table>
+						        </div><!--//table-responsive-->
+						    </div><!--//app-card-body-->		
+						</div><!--//app-card-->
+			        </div><!--//tab-pane-->
+				</div><!--//tab-content-->
+				
+				
+			    
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
+	    
+	    <footer class="app-footer">
+		    <div class="container text-center py-3">
+		         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+		       
+		    </div>
+	    </footer><!--//app-footer-->
+	    
     </div><!--//app-wrapper-->    					
 
  
@@ -340,5 +568,4 @@
 
 </body>
 </html> 
-
 
