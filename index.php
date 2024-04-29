@@ -27,6 +27,7 @@ if(isset($_SESSION["user_id"])) {
         $avatar = $row["avatar"];
     } 
 }
+
 ?>
 
 <!DOCTYPE html>

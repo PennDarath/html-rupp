@@ -18,7 +18,7 @@ $user_id = $_SESSION["user_id"];
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
 
-    
+
     if ($_FILES["image"]["error"] == 4) {
         echo "<script> alert('Image Does Not Exist'); </script>";
     } else {
@@ -72,11 +72,14 @@ if ($row = $result->fetch_assoc()) {
 ?>
 
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <title>User Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -101,7 +104,7 @@ if ($row = $result->fetch_assoc()) {
             border: 1px solid #ccc;
             border-radius: 20px;
             background-color: #f2f2f2;
-            text-align: center; 
+            text-align: center;
         }
 
         .profile-picture {
@@ -109,7 +112,7 @@ if ($row = $result->fetch_assoc()) {
             height: 250px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 auto 20px; 
+            margin: 0 auto 20px;
         }
 
         .profile-picture img {
@@ -119,27 +122,30 @@ if ($row = $result->fetch_assoc()) {
         }
 
         .profile-details {
-            margin-top: 20px; 
+            margin-top: 20px;
         }
 
         .profile-form {
-            margin-top: 20px; 
+            margin-top: 20px;
+            text-align: center;
         }
 
         .profile-form label {
             display: block;
             margin-bottom: 10px;
+            margin: 0 auto;
         }
 
         .profile-form input[type="file"] {
             display: block;
             margin-bottom: 10px;
-            margin: 0 auto; 
+            margin: 0 auto;
+            width: fit-content;
         }
 
         .profile-form button {
-            display: block; 
-            width: 100%; 
+            display: block;
+            width: 100%;
             padding: 10px;
             background-color: black;
             color: white;
@@ -158,6 +164,29 @@ if ($row = $result->fetch_assoc()) {
             border-radius: 5px;
             cursor: pointer;
         }
+
+       
+        .file-input-container {
+            display: flex;
+            justify-content: center;
+        }
+        .btn-dark {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0px;
+    text-decoration: none; 
+}
+
+.btn-dark:hover {
+    background-color: #333;
+}
+
     </style>
 </head>
 
@@ -174,13 +203,19 @@ if ($row = $result->fetch_assoc()) {
                     echo "<h2>Email: " . $_SESSION["user_email"] . "</h2>";
                 }
                 ?>
-                <a href="logout.php" class="btn-dark">Logout</a>
             </div>
             <form class="profile-form" action="" method="post" autocomplete="off" enctype="multipart/form-data">
-                <label for="image">Choose an image :</label>
-                <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value=""> <br>
+                <label for="image"></label>
+              
+                <div class=" flex w-fit justify-center">
+                    <div class="border border-500 w-fit flex justify-center"><input type="file" name="image" id="image" class="flex justify-center items-center  w-10  border border-b;ue-500" accept=".jpg, .jpeg, .png" value=""> <br></div>
+
+                </div>
                 <button type="submit" name="submit">Submit</button>
             </form>
+            <div class="profile-details">
+                <a href="logout.php" class="btn-dark">Logout</a>
+            </div>
         </div>
     </div>
 </body>
